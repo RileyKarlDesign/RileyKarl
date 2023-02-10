@@ -1,38 +1,390 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+}
+:root {
+  --pdn: 20px;
+  --grey: rgb(167, 167, 167);
+  --inactive: rgb(212, 212, 212);
+  --wht: rgb(238, 238, 238);
+  --blk: rgb(94, 94, 94);
+
+  --window-width: calc(100vw - 143px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+  color: var(--blk);
+  text-decoration: none;
+  color: var(--blk);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+p{
+  font-size: 16px;
+  font-weight: 400 ;
+  color: var(--blk);
+  line-height: 125%;
+}
+
+h4{
+  font-size: 16px;
+  font-weight: 400 ;
+  color: var(--wht);
+  line-height: 125%;
+}
+
+.sub{
+  color: var(--grey);
+  padding-bottom: var(--pdn);
+}
+
+h1{
+  font-size: 1.9vw;
+  font-weight: 400 ;
+  color: var(--blk);
+
+}
+.home-wrap{
+  display: flex;
+  flex-direction: row-reverse;
+  
+  
+  overflow: hidden;
+}
+
+.movment-wrap{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.work-state .movment-wrap{
+  
+  transition: ease all 0.3s;
+  transform: translate( 0, 0px);
+}
+
+.about-state .movment-wrap{
+  
+  transition: ease all 0.3s;
+  transform: translate(calc(var(--window-width) - 60px - 2px ), 0px);
+}
+
+.about-link{
+  position: fixed;
+  left: var(--pdn);
+  top: var(--pdn);
+  z-index: 100;
+}
+
+.btn{
+  padding: 2px 6px ;
+  background-color: var(--blk);
+  width: min-content;
+  border-radius: 4px;
+  border: 2px solid var(--blk);
+}
+
+.btn-inactive p{
+  color: green !important;
+}
+
+.btn-inactive{
+  /* border: 2px solid var(--grey); */
+  background-color: rgb(204, 204, 204);
+  
+}
+
+.btn-inactive p{
+  color: var(--wht) !important;
+}
+
+
+.inactive{
+  background-color: var(--inactive) !important;
+  overflow: hidden;
+}
+
+.inactive h1 {
+  
+  opacity: 0.3;
+  
+}
+
+.inactive .project-inner{
+  background-color: var(--inactive);
+  overflow: hidden;
+}
+
+.section{
+  padding: var(--pdn) ;
+  height: calc(100vh - var(--pdn) * 2);
+
+  min-width: var(--window-width);
+  overflow: hidden;
+}
+
+
+/* about section ----------------------------------------------- */
+
+  .about-section{
+    background-color: var(--wht) ;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--pdn);
+    padding: var(--pdn);
+    height: calc( 100vh - var(--pdn)*2 );
+
+    width: var(--window-width);
+    position: relative;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  .profilepic{
+    grid-column: 1 / 6;
+    background-color: rgb(33, 33, 33);
+    
+    position: absolute;
+    top: 0;
+    left: calc( -20px);
+    right: 0;
+    bottom: 0;
+   
+    
+  }
+
+  .profilepic img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .hero-statement{
+    
+    width: 100%;
+
+    margin-bottom: calc( var(--pdn) * 3);
+  }
+
+  .about-info{
+    grid-column: 6 / 13;
+   
+    
+    
+
+    width:calc( 100% - var(--pdn));
+  }
+
+  .about-body{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+  }
+
+  .clinets-block{
+    grid-column: 1/3;
+  }
+  .reconition-block{
+    grid-column: 3/6;
+  }
+  .pen-block{
+    grid-column: 7/8;
+  }
+
+  
+
+
+  
+
+/* work section ------------------------------------------------ */
+  
+  .work-section{
+    position: relative;
+    overflow-x: hidden;
+    background-color: var(--wht);
+  }
+
+
+  /*  work project catagorys line */
+
+  
+  .catagorys-title{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    padding: var(--pdn) 0;
+
+  }
+
+  .catagorys-title p{
+    color: var(--grey);
+  }
+
+
+  /* work lines  */
+
+  .line{
+    height: 1px ;
+    width: 100%;
+    background-color: var(--grey);
+
+  }
+
+  .work-line{
+    
+    position: relative;
+    
+    display: flex;
+    
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+
+    padding: 10px 0;
+    transition: ease all 0.3;
+    
+  }
+
+  .work-line img{
+    opacity: 0 ;
+    height: 30vw;
+    position: absolute;
+    left: 50%;
+    width: max-content;
+    
+  }
+
+  .work-line:hover {
+   background-color: var(--grey);
+   
+    
+  }
+
+  .work-line:hover img{
+    opacity: 1 ;
+   
+    
+  }
+
+  .work-line-index{
+    width: max-content;
+    grid-column: 1/2;
+    
+  }
+
+  .work-line-title{
+    width: max-content;
+    grid-column: 2/5;
+  }
+
+  .work-catagory{
+    width: 100%;
+    
+    grid-column: 5/12;
+   
+  }
+
+  .work-line-cat{
+    width: max-content;
+    
+  }
+
+  .work-line-date{
+    width: 100%;
+    
+    width: max-content;
+    grid-column: 13/13;
+    text-align: right;
+  }
+
+
+
+
+/* project section --------------------------------------------- */
+
+.project-tab {
+
+  width: 100%;
+  position: absolute;
+  background-color: var(--grey);
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  
+  top: 0;
+  
+  right: 0;
+  bottom: 0;
+  
+}
+
+.closed{
+  left: 100%;
+  transition: ease all 0.5s;
+  filter: drop-shadow(0 0 0.75rem rgba(80, 80, 80, 0.119));
+}
+
+.open{
+  left: 0% ;
+  transition: ease all 0.5s;
+  filter: drop-shadow(0 0 0.75rem rgba(80, 80, 80, 0.718));
+  
+}
+
+
+
+
+.project-title-ani{
+  
+  animation: projectIntro 3s;
+
+  
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 5px;
+ 
+  
+  
+  overflow: hidden;
+
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+.project-inner{ 
+  
+  width: calc(100% - var(--pdn) * 2 );
+  overflow-x: scroll;
+  background-color: var(--wht);
+  background-color: var(--wht);
+  padding: var(--pdn);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
+ 
+  overflow-x: hidden;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.project-inner img{
+  width: 100%;
+  object-fit: cover;
+  z-index: 20;
+}
+.img-wrap{
+
+  width: 100%;
+  
+}
+
+.project-header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
 }
