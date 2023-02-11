@@ -67,7 +67,7 @@ export default function OnePost( props ) {
                  
           <p className="btn"> {postData.title}</p>
 
-                <Link to="/" onClick= { () => props.setTabState() } >
+                <Link to="/work" onClick= { () => props.setTabState() } >
                   <CloseBtn  />
                 </Link>
 
@@ -76,7 +76,13 @@ export default function OnePost( props ) {
        
 
           <div className="project-title-ani">
-          <h1> {postData.title}</h1>
+          {/* <h1> {postData.title}</h1> */}
+
+          <div className="project-info-block">
+            <p className="sub"> Titile </p>
+
+            <p> {postData.title} </p>
+          </div>
 
           <div className="project-info-block">
             <p className="sub"> Year </p>

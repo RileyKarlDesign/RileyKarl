@@ -1,13 +1,17 @@
 // src/components/AllPosts.js
 
 import React, { useEffect, useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import AboutSection from "./AboutSection";
 import OnePost from "./OnePost.jsx";
 
 
 export default function AllPosts() {
+
+  const {id}= useParams();
+
+  console.log(id)
   
   const [projectTabState, setProjectTabState ] = useState(true);
 
@@ -29,8 +33,40 @@ export default function AllPosts() {
     projectTab.classList.remove('open');
   }
 
+  const pathName = window.location.pathname 
 
-  function chnageHomeState(){
+function pathNameStyleing () {
+
+  
+  let workBtn = document.querySelector('.work-link')
+    let aboutBtn = document.querySelector('.about-link')
+
+    let homeWrap = document.querySelector('.home-wrap')
+    let aboutSection = document.querySelector('.about-section')
+    let workSection = document.querySelector('.work-section')
+
+    if ( pathName === '/about'){
+    
+    homeWrap.classList.remove('work-state')
+    homeWrap.classList.add('about-state')
+
+    workBtn.classList.add('btn-inactive')
+    aboutBtn.classList.remove('btn-inactive')
+
+  } else{
+
+    workBtn.classList.remove('btn-inactive')
+    aboutBtn.classList.add('btn-inactive')
+
+    homeWrap.classList.add('work-state')
+    homeWrap.classList.remove('about-state')
+  }
+}
+
+
+
+
+  function changeHomeState(e){
     let workBtn = document.querySelector('.work-link')
     let aboutBtn = document.querySelector('.about-link')
 
@@ -38,7 +74,7 @@ export default function AllPosts() {
     let aboutSection = document.querySelector('.about-section')
     let workSection = document.querySelector('.work-section')
 
-    if ( document.querySelector('.home-wrap').classList.contains('work-state')){
+    if ( e === 'about'){
 
         console.log('click about state active ')
           
@@ -53,8 +89,8 @@ export default function AllPosts() {
           workSection.classList.add('inactive')
 
           
-    }else{
-      console.log('work state')
+    }else if (e === "work" ) {
+      
       aboutBtn.classList.remove('btn-inactive')
       workBtn.classList.add('btn-inactive')
 
@@ -69,6 +105,9 @@ export default function AllPosts() {
   }
 
   useEffect(() => {
+
+    pathNameStyleing()
+
     sanityClient
       .fetch(
         `*[_type == "post"]{
@@ -99,9 +138,9 @@ export default function AllPosts() {
 
       <div className="nav">
       
-
-        <p className="about-link btn" onClick={() => chnageHomeState()} >  About </p> 
-        
+        <Link to={'/about'} onClick={() => changeHomeState('about')}> 
+           <p className="about-link btn"  >  About </p> 
+        </Link>
       
       </div>
     
@@ -113,7 +152,7 @@ export default function AllPosts() {
        
         
         
-          <div className="resize" onClick={() => chnageHomeState()}> 
+          <div className="resize" onClick={() => changeHomeState()}> 
 
             {/* <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.43934 13.0607C-0.146447 12.4749 -0.146447 11.5252 0.43934 10.9394L9.98528 1.39344C10.5711 0.807655 11.5208 0.807655 12.1066 1.39344C12.6924 1.97923 12.6924 2.92898 12.1066 3.51476L5.12132 10.5H26.5C27.3284 10.5 28 11.1716 28 12V12C28 12.8285 27.3284 13.5 26.5 13.5H5.12132L12.1066 20.4853C12.6924 21.0711 12.6924 22.0209 12.1066 22.6066C11.5208 23.1924 10.5711 23.1924 9.98528 22.6066L0.43934 13.0607Z" fill="black"/>
@@ -122,9 +161,9 @@ export default function AllPosts() {
           </div>
 
        
-        
-        <p className="work-link btn btn-inactive" onClick={() => chnageHomeState()} >  Work </p>
-      
+        <Link to={'/work'} onClick={() => changeHomeState('work')}> 
+        <p className="work-link btn btn-inactive"  >  Work </p>
+        </Link>
         
 
 
@@ -140,7 +179,7 @@ export default function AllPosts() {
 
             {allPostsData && allPostsData.map((post, index) => (
 
-                <Link to={"/" + post.slug.current} key={post.slug.current} onClick = { () => openTab()}>
+                <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => openTab()}>
                     <div className="line"></div>
                     <div className="work-line"  key={index}  >
 
@@ -181,7 +220,7 @@ export default function AllPosts() {
             </div >
           </div>
           
-          <AboutSection />
+          <AboutSection  />
 
       </div>
     </div>

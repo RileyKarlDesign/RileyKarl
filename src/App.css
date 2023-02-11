@@ -9,9 +9,9 @@
   --grey: rgb(169, 169, 169);
   --inactive: rgb(193, 193, 193);
   --wht: rgb(238, 238, 238);
-  --blk: rgb(94, 94, 94);
+  --blk: rgb(75, 75, 75);
 
-  --window-width: calc(100vw - var(--pdn) * 7.7);
+  --window-width: calc(100vw - var(--pdn) * 7);
 }
 
 
@@ -125,10 +125,11 @@ h1{
 
 .btn{
   padding: 1px 8px  2px 8px !important;
-  background-color: rgb(223, 223, 223);
+  background-color: var(--blk);
+  color: var(--wht);
   width: max-content;
   border-radius: 4px;
-  border: 2px solid rgb(170, 170, 170);
+  border: 2px solid var(--blk);
 
   filter: drop-shadow(0 0 0.75rem rgba(31, 31, 31, 0.196));
   
@@ -136,15 +137,18 @@ h1{
 
 
 .btn:hover{
-  background-color: rgb(223, 223, 223);
-  border: 2px solid rgb(170, 170, 170);
+  background-color: var(--grey);
+  border: 2px solid var(--blk);
+  color: var(--blk);
 }
 
 
 .btn-inactive{
   
   padding: 1px 8px  2px 8px ;
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(223, 223, 223);
+  color: var(--blk);
+  border: 2px solid var(--grey);
  
   
   
@@ -155,6 +159,7 @@ h1{
 
 .inactive{
   background-color: var(--inactive) !important;
+  filter: backgroud-blur(2px);
   
 }
 
@@ -405,7 +410,7 @@ h1{
 
   width: 100%;
   position: absolute;
-   background-color: var(--grey); 
+   background-color: var(--wht); 
   
   display: flex;
   flex-direction: column;
@@ -417,8 +422,10 @@ h1{
   
 }
 
+/* testing  */
+
 .closed{
-  top: 30%;
+  top: 100%;
   left: 0%; 
   transition: ease all 0.5s;
   filter: drop-shadow(0 0 0.75rem rgba(80, 80, 80, 0.119));

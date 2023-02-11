@@ -16,13 +16,11 @@ function App() {
       <div>
       <Routes>
         
-          <Route element={ <AllPosts /> } path="/*" exact /> 
-
-
-
-
+          <Route element={ <AllPosts /> } path="/*" />
+          <Route element={ <AllPosts /> } path="/work/*"  />  
           
-          
+          <Route element={ <AllPosts /> } path="/about/*" exact /> 
+
        </Routes>
       </div>
     </BrowserRouter>
