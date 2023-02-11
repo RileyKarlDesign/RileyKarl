@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Routes, Route, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import sanityClient from "../client.js";
 // import BlockContent from "@sanity/block-content-to-react";
 import imageUrlBuilder from "@sanity/image-url";
@@ -14,7 +14,15 @@ export default function OnePost( props ) {
   const [postData, setPostData] = useState(null);
   const { slug } = useParams();
 
+
+  
+ 
+
+
   useEffect(() => {
+
+   
+    
     sanityClient
       .fetch(
         `*[slug.current == $slug]{
@@ -41,9 +49,12 @@ export default function OnePost( props ) {
       .catch(console.error);
   }, [slug]);
 
+
+
   if (!postData) return <div>Loading...</div>;
 
   return (
+    
 
       
         <div className="project-inner">
@@ -54,10 +65,10 @@ export default function OnePost( props ) {
           <div className="project-header">
 
                  
-          <p> {postData.title}</p>
+          <p className="btn"> {postData.title}</p>
 
-                <Link to="/" onClick= { () => props.handelClose() } >
-                  <CloseBtn />
+                <Link to="/" onClick= { () => props.setTabState() } >
+                  <CloseBtn  />
                 </Link>
 
           </div>
@@ -66,17 +77,28 @@ export default function OnePost( props ) {
 
           <div className="project-title-ani">
           <h1> {postData.title}</h1>
-          <p> Year: {postData.date}</p>
 
-          {postData.categories.map( (cat, index) => (
-            
-            <div key={index}>
-               <p>{cat}</p>
-              
-            </div>
-            
-          ))} 
+          <div className="project-info-block">
+            <p className="sub"> Year </p>
+
+            <p> {postData.date} </p>
+          </div>
           
+          <div className="project-info-block">
+          <p className="sub"> Servises </p>
+            <div className="cats">
+
+                {postData.categories.map( (cat, index) => (
+                  
+                  <div key={index}>
+                    <p>{cat}</p>
+                    
+                  </div>
+                  
+                ))} 
+
+          </div>
+          </div>
           </div>
         
         

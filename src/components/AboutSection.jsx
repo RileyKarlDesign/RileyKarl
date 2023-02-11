@@ -9,13 +9,14 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-export default function AboutSection() {
+export default function AboutSection(props) {
 
   const [aboutData, setAboutData] = useState(null);
 
-
+  
   useEffect(() => {
-    
+   
+
     sanityClient
       .fetch(
         `*[_type == "about"]{
@@ -61,9 +62,11 @@ export default function AboutSection() {
     </div>
 
     <div className="about-info">
+
+      <div>
         <h1 className="hero-statement"> {aboutData.hero} </h1>
 
-
+    
         <div className="about-body">
 
                         <div className="clinets-block">
@@ -114,7 +117,9 @@ export default function AboutSection() {
         
        </div>
 
+       </div>
 
+      <div className="footer">
 
       
           
@@ -130,6 +135,8 @@ export default function AboutSection() {
           <p className="sub">Contact</p>
           <p> Email  {aboutData.email} </p>
           <p> Phone  {aboutData.phone} </p>
+
+          </div>
 
           </div>
           

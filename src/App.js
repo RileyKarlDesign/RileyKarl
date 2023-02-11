@@ -4,6 +4,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllPosts from "./components/AllPosts.jsx";
 import "./App.css"
+import OnePost from "./components/OnePost.jsx";
+import AboutSection from "./components/AboutSection.jsx";
 
 
 
@@ -13,8 +15,14 @@ function App() {
     <BrowserRouter>
       <div>
       <Routes>
-          <Route element={ <AllPosts /> } path="/*" exact />
-         
+        
+          <Route element={ <AllPosts /> } path="/*" exact /> 
+
+
+
+
+          
+          
        </Routes>
       </div>
     </BrowserRouter>
