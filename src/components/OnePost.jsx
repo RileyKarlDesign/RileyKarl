@@ -40,6 +40,7 @@ export default function OnePost( props ) {
          body,
          
         'categories': categories[] -> title,
+        names,
         'images': imagesGallery[].asset->{_id,url},
          
        }`,
@@ -51,7 +52,7 @@ export default function OnePost( props ) {
 
 
 
-  if (!postData) return <div>Loading...</div>;
+  if (!postData) return <h1>Loading...</h1>;
 
   return (
     
@@ -60,12 +61,14 @@ export default function OnePost( props ) {
         <div className="project-inner">
 
           
-
+<div className="project-title-wrapper">
+        <p className=" btn btn-inactive  "> {postData.title}</p>
+        </div>
 
           <div className="project-header">
 
-                 
-          <p className="btn"> {postData.title}</p>
+        
+          
 
                 <Link to="/work" onClick= { () => props.setTabState() } >
                   <CloseBtn  />
@@ -77,7 +80,9 @@ export default function OnePost( props ) {
 
           <div className="project-title-ani">
           {/* <h1> {postData.title}</h1> */}
+          
 
+          
           <div className="project-info-block">
             <p className="sub"> Titile </p>
 
@@ -105,6 +110,30 @@ export default function OnePost( props ) {
 
           </div>
           </div>
+
+          <div className="project-info-block">
+          <p className="sub"> Credits </p>
+            <div className="credits">
+            
+            
+            {postData.names.map( (name, index) => (
+                  
+                  <div key={index}>
+                    <p>{name}</p>
+                    
+                  </div>
+                  
+                ))}
+
+            
+              
+            
+         
+
+          </div>
+          </div>
+
+          
           </div>
         
         

@@ -24,6 +24,8 @@ export default function AllPosts() {
     projectTab.classList.remove('closed');
     projectTab.classList.add('open');
 
+    // document.querySelector('.work-section').style.background="var(--blk)"
+
   }
 
   function closeTab(){
@@ -31,6 +33,8 @@ export default function AllPosts() {
 
     projectTab.classList.add('closed');
     projectTab.classList.remove('open');
+
+    
   }
 
   const pathName = window.location.pathname 
@@ -52,6 +56,9 @@ function pathNameStyleing () {
 
     workBtn.classList.add('btn-inactive')
     aboutBtn.classList.remove('btn-inactive')
+
+    // aboutSection.classList.add('active')
+    // aboutSection.classList.remove('inactive')
 
   } else{
 
@@ -122,6 +129,7 @@ function pathNameStyleing () {
         },
         
         
+        
 
       }
     }`
@@ -149,22 +157,16 @@ function pathNameStyleing () {
         
         <div className="work-section section active" >
        
-       
         
         
-          <div className="resize" onClick={() => changeHomeState()}> 
-
-            {/* <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.43934 13.0607C-0.146447 12.4749 -0.146447 11.5252 0.43934 10.9394L9.98528 1.39344C10.5711 0.807655 11.5208 0.807655 12.1066 1.39344C12.6924 1.97923 12.6924 2.92898 12.1066 3.51476L5.12132 10.5H26.5C27.3284 10.5 28 11.1716 28 12V12C28 12.8285 27.3284 13.5 26.5 13.5H5.12132L12.1066 20.4853C12.6924 21.0711 12.6924 22.0209 12.1066 22.6066C11.5208 23.1924 10.5711 23.1924 9.98528 22.6066L0.43934 13.0607Z" fill="black"/>
-            </svg> */}
-
-          </div>
+        
+          
 
        
         <Link to={'/work'} onClick={() => changeHomeState('work')}> 
         <p className="work-link btn btn-inactive"  >  Work </p>
         </Link>
-        
+       
 
 
               <div className="catagorys-title">
@@ -194,7 +196,14 @@ function pathNameStyleing () {
                         <p className="work-line-title" >{post.title}</p>
 
                         <div className="work-catagory">
-                        <p className="work-line-cat">  {post.categories} </p>
+                        {post.categories.map( (cat, index) => (
+                  
+                              <div className= 'line-cat' key={index}>
+                                <p>{cat}</p>
+                                
+                              </div>
+                              
+                ))} 
                         </div>
                         
 

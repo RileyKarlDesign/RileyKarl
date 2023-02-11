@@ -99,7 +99,7 @@ export default function AboutSection(props) {
   </div>
 
   <div className="pen-block">
-
+  <div className="pen-block-wrap">
       <p className="sub" >Favourite Pens</p>
   
 
@@ -111,7 +111,7 @@ export default function AboutSection(props) {
                     </div>
                     
         ))}
-
+  </div>
   </div>
 
         
@@ -126,15 +126,15 @@ export default function AboutSection(props) {
           <div className="social-block">
 
           <p className="sub" >Social</p>
-          <p> insta  {aboutData.instagram} </p>
-          <p> linkedin  {aboutData.linkedin} </p>
+          <a className="underline" href= {" https://www.instagram.com/"+  aboutData.instagram } target="_blank" > Instagram  </a>
+          <a className="underline" href={ " https://www.linkedin.com/in/"+ aboutData.linkedin + "/" }target="_blank" > linkedin  </a>
 
           </div>
 
           <div className="contact-block">
           <p className="sub">Contact</p>
-          <p> Email  {aboutData.email} </p>
-          <p> Phone  {aboutData.phone} </p>
+          <a className="unerline" href={"mailto:"+ aboutData.email } target="_blank"> Email : {aboutData.email} </a>
+          <p> Phone :  {aboutData.phone} </p>
 
           </div>
 

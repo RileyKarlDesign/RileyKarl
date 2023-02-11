@@ -50,8 +50,8 @@ export default defineType({
      }),
     
     defineField({
-        title: 'Credit',
         name: 'names',
+        title: 'Credit',
         type: 'array',
         of: [{type: 'string'}]
       }),
