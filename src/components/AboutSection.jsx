@@ -65,7 +65,8 @@ export default function AboutSection(props) {
     <div className="about-info">
 
       <div>
-        <h1 className="hero-statement"> {aboutData.hero} </h1>
+      <p className="sub"> Opening Statment </p>
+        <p className="hero-statement"> {aboutData.hero} </p>
 
     
         <div className="about-body">
