@@ -5,6 +5,7 @@ import { Link, Route, Routes, useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import AboutSection from "./AboutSection";
 import OnePost from "./OnePost.jsx";
+import enterView from 'enter-view';
 
 
 export default function AllPosts() {
@@ -12,6 +13,14 @@ export default function AllPosts() {
   const {id}= useParams();
 
   console.log(id)
+
+
+  enterView({
+    selector: '.line',
+    enter: function(el) {
+      el.classList.add('entered');
+    }
+  });
   
   const [projectTabState, setProjectTabState ] = useState(true);
 
@@ -141,14 +150,24 @@ function pathNameStyleing () {
 
 
   return (
+    
 
     <div className="home-wrap work-state">
+
+      <div className="landing-animation">
+        <h1>Riley Karl </h1>
+      </div>
 
       <div className="nav">
       
         <Link to={'/about'} onClick={() => changeHomeState('about')}> 
            <p className="about-link btn"  >  About </p> 
         </Link>
+
+        <Link to={'/work'} onClick={() => changeHomeState('work')}> 
+           <p className="work-link-mobile work-link btn">  Work </p> 
+        </Link>
+        
       
       </div>
     
@@ -166,8 +185,12 @@ function pathNameStyleing () {
         <Link to={'/work'} onClick={() => changeHomeState('work')}> 
         <p className="work-link btn btn-inactive"  >  Work </p>
         </Link>
-       
 
+        
+       
+            <div className="all-work">
+           
+            
 
               <div className="catagorys-title">
 
@@ -215,7 +238,7 @@ function pathNameStyleing () {
                 </Link>
 
               ))}
-
+            </div>    
 
             <div  className= 'project-tab closed'  >
 

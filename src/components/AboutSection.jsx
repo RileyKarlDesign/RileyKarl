@@ -44,7 +44,7 @@ export default function AboutSection(props) {
       
   }, []);
 
-  if (!aboutData) return <div>Loading...</div>;
+  if (!aboutData) return <div className="loading"><div>Loading...</div></div>;
 
 
 
@@ -53,13 +53,14 @@ export default function AboutSection(props) {
 
     <div className="about-section  inactive section ">
 
-      
-
-    
-
-    <div className="profilepic">
+<div className="profilepic">
       <img src={aboutData.mainImage.asset.url} alt="" />
     </div>
+      
+    <div className="all-about">
+    
+
+    
 
     <div className="about-info">
 
@@ -140,6 +141,7 @@ export default function AboutSection(props) {
 
           </div>
           
+      </div>
       </div>
       
     </div>

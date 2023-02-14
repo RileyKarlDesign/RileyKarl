@@ -52,7 +52,7 @@ export default function OnePost( props ) {
 
 
 
-  if (!postData) return <h1>Loading...</h1>;
+  if (!postData) return <div className="loading"><h1>Loading</h1></div>;
 
   return (
     
@@ -144,8 +144,8 @@ export default function OnePost( props ) {
 
           {postData.images.map( (img, index) => (
             
-            <div className="img-wrap" key={index}>
-               <p>{index}</p>
+            <div className="img-wrap project-img" key={index}>
+               
               <img src={urlFor(img).url()} alt="" />
             </div>
             

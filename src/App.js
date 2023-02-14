@@ -13,7 +13,7 @@ function App() {
   return (
 
     <BrowserRouter>
-      <div>
+      <div className="fragment">
       <Routes>
         
           <Route element={ <AllPosts /> } path="/*" />
