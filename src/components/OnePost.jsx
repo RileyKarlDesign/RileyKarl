@@ -140,7 +140,7 @@ export default function OnePost( props ) {
         
         
           
-          
+          <div className="project-images">
 
           {postData.images.map( (img, index) => (
             
@@ -151,26 +151,9 @@ export default function OnePost( props ) {
             
           ))}
 
-          
-
-          
-        
-          <div>
-            <h4>{postData.name}</h4>
           </div>
-        
+
       
-      <div>
-
-        
-
-        {/* <BlockContent
-          blocks={postData.body}
-          projectId={sanityClient.clientConfig.projectId}
-          dataset={sanityClient.clientConfig.dataset}
-        /> */}
-        
-      </div>
     </div>
   );
 }
