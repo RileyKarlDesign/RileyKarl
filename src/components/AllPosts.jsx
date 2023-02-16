@@ -67,6 +67,8 @@ function pathNameStyleing () {
     let aboutSection = document.querySelector('.about-section')
     let workSection = document.querySelector('.work-section')
 
+    let projectTab = document.querySelector('.project-tab')
+
     if ( pathName === '/about'){
     
     homeWrap.classList.remove('work-state')
@@ -74,17 +76,23 @@ function pathNameStyleing () {
 
     workBtn.classList.add('btn-inactive')
     aboutBtn.classList.remove('btn-inactive')
+    projectTab.classList.remove('open')
 
     // aboutSection.classList.add('active')
     // aboutSection.classList.remove('inactive')
 
-  } else{
+    console.log(" removing open")
+
+  } else if (pathName === '/work'){
 
     workBtn.classList.remove('btn-inactive')
     aboutBtn.classList.add('btn-inactive')
 
     homeWrap.classList.add('work-state')
     homeWrap.classList.remove('about-state')
+    projectTab.classList.remove('open')
+
+    console.log(" removing open")
   }
 }
 
