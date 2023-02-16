@@ -153,8 +153,8 @@ a{
 
 
 p{
-  font-size: 1rem;
-  font-weight: 600 ;
+  font-size: 0.8rem;
+  font-weight: 500 ;
   color: var(--blk);
   line-height: 125%;
   
@@ -430,7 +430,7 @@ h1{
   display: flex;
   align-items: center;
   
-  border-bottom: 3px solid transparent;
+  border-bottom: 1px solid transparent;
   
 
   
@@ -443,7 +443,7 @@ h1{
   
   
   color: var(--blk);
-  border-bottom: 3px solid var(--blk);
+  border-bottom: 1px solid var(--blk);
   
 }
 
@@ -454,7 +454,7 @@ h1{
   
   color: var(--blk);
   
-  border-bottom: 3px solid var(--blk);
+  border-bottom: 1px solid var(--blk);
   display: flex;
   align-items: center;
   
@@ -465,7 +465,7 @@ h1{
   
   
   
-  border-bottom: 3px solid var(--blk);
+  border-bottom: 1px solid var(--blk);
  
   
   
