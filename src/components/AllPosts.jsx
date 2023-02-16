@@ -9,6 +9,7 @@ import OnePost from "./OnePost.jsx";
 import Footer from "./subComponents/Footer.jsx";
 import Header from "./subComponents/Header.jsx";
 import gsap from "gsap";
+import ResizeSreeen from "./subComponents/ResizeSreeen.jsx";
 
 export default function AllPosts() {
 
@@ -18,15 +19,15 @@ export default function AllPosts() {
 
 
 
-
+if(document.querySelector('.line')){
   gsap.from(".line", {rotation:0, x: "60%" , opacity:0.6, duration: 0.3, stagger: 0.1,   delay: 0,  ease:"sine.out"})
   gsap.to(".line", { rotation:0 , x: 0 , opacity:1, duration: 0.3, stagger: 0.1 ,   delay: 0, ease:"sine.out"})
-
-  
+}
+if(document.querySelector('.line')){
   gsap.fromTo(".sub-num", {x: 100, opacity:0}, {x: 0, opacity:1});
   gsap.set('.line', {x: 100, opacity:0 });
   gsap.fromTo(".line", {x: 100, opacity:0 , stagger:0.1 , delay: 0}, {x: 0, opacity:1,stagger:0.1, });
-
+}
   
   
   const [projectTabState, setProjectTabState ] = useState(true);
@@ -171,7 +172,8 @@ function pathNameStyleing () {
     
 
     <div className="home-wrap work-state">
-
+    
+      <ResizeSreeen />
       
 
       <h1 className="footer-name">Riley Karl </h1>

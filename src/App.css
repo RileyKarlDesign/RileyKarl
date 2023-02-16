@@ -6,6 +6,41 @@
 
 }
 
+.resize-window{
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: var(--inactive);
+  z-index: 99999999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease all 0.2s;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.resize-window p{
+  color: var(--wht);
+}
+
+.resizeing{
+  opacity: 1;
+}
+
+.mesurments{
+  display: flex;
+  gap: 5px;
+}
+
+.resizing {
+
+}
+
 body{
   background-color: var(--wht);
 }
@@ -105,7 +140,7 @@ body{
   --pdn: 20px;
   --grey: rgba(0, 0, 0, 0.307);
   --lite-grey: rgba(157, 157, 157, 0.08);
-  --inactive: rgb(255, 68, 0);
+  --inactive: rgb(51, 116, 73);
   --wht: rgb(229, 229, 229);
   --blk: rgb(85, 85, 85);
   --shadow: rgb(111, 111, 111);
@@ -474,7 +509,7 @@ h1{
 
 .inactive{
   background-color: var(--inactive) !important;
-  filter: backgroud-blur(2px);
+  filter: blur(2px);
   
 }
 
@@ -1030,7 +1065,7 @@ h1{
   right: 0%; 
   left: 0;
   bottom: 0;
-  background-color: var(--blk);
+  background-color: var(--inactive);
   transition: ease all 1s;
   
 }
