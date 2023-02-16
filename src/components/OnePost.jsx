@@ -52,7 +52,7 @@ export default function OnePost( props ) {
 
 
 
-  if (!postData) return <div className="loading"><h1>Loading</h1></div>;
+  if (!postData) return <div className="loading"><p>Loading</p></div>;
 
   return (
     
@@ -61,14 +61,14 @@ export default function OnePost( props ) {
         <div className="project-inner">
 
           
-<div className="project-title-wrapper">
-        <p className=" btn btn-inactive  "> {postData.title}</p>
-        </div>
+
 
           <div className="project-header">
 
         
-          
+          <div className="project-title-wrapper">
+        <p className=" btn btn-inactive  "> {postData.title}</p>
+        </div>
 
                 <Link to="/work" onClick= { () => props.setTabState() } >
                   <CloseBtn  />
@@ -78,7 +78,7 @@ export default function OnePost( props ) {
         
        
 
-          <div className="project-title-ani">
+          <div className="project-main-info">
           {/* <h1> {postData.title}</h1> */}
           
 

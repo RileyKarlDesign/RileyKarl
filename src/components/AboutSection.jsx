@@ -53,9 +53,7 @@ export default function AboutSection(props) {
 
     <div className="about-section  inactive section ">
 
-<div className="profilepic">
-      <img src={aboutData.mainImage.asset.url} alt="" />
-    </div>
+
       
     <div className="all-about">
     
@@ -65,16 +63,20 @@ export default function AboutSection(props) {
     <div className="about-info">
 
       <div>
+        <div className="hero-block info-blok">
+
         
-      <p className="sub hero-title"> Introduction </p>
+        <p className="sub-num"> 01 </p>
+        <p className="sub hero-title"> Introduction </p>
         <p className="hero-statement"> {aboutData.hero} </p>
 
+        </div>
     
         <div className="about-body">
 
-                        <div className="clinets-block">
+                  <div className="clinets-block">
 
-                      
+                      <p className="sub-num"> 02 </p>
                       
                 <p className="sub"> Selected Clients </p>
 
@@ -99,30 +101,32 @@ export default function AboutSection(props) {
                               </div>
                               
                             ))}
-  </div>
+                  </div>
 
-  <div className="pen-block">
-  <div className="pen-block-wrap">
-      <p className="sub" >Favourite Pens</p>
-  
+                  <div className="pen-block">
 
-        {aboutData.pens.map( (pen, index) => (
-                    
-                    <div key={index}>
-                      <p>{pen}</p>
-                    
-                    </div>
-                    
-        ))}
-  </div>
-  </div>
+                  <p className="sub-num"> 03 </p>
+                  <div className="pen-block-wrap">
+                      <p className="sub" >Pen Recomendations</p>
+                  
+
+                        {aboutData.pens.map( (pen, index) => (
+                                    
+                                    <div key={index}>
+                                      <p>{pen}</p>
+                                    
+                                    </div>
+                                    
+                        ))}
+                  </div>
+                  </div>
 
         
        </div>
 
        </div>
 
-      <div className="footer">
+      {/* <div className="footer">
 
       
           
@@ -141,7 +145,7 @@ export default function AboutSection(props) {
 
           </div>
 
-          </div>
+          </div> */}
           
       </div>
       </div>

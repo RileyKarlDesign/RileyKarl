@@ -5,8 +5,10 @@ import { Link, Route, Routes, useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import AboutSection from "./AboutSection";
 import OnePost from "./OnePost.jsx";
-import enterView from 'enter-view';
 
+import Footer from "./subComponents/Footer.jsx";
+import Header from "./subComponents/Header.jsx";
+import gsap from "gsap";
 
 export default function AllPosts() {
 
@@ -15,12 +17,17 @@ export default function AllPosts() {
   console.log(id)
 
 
-  enterView({
-    selector: '.line',
-    enter: function(el) {
-      el.classList.add('entered');
-    }
-  });
+
+
+  gsap.from(".line", {rotation:0, x: "60%" , opacity:0.6, duration: 0.3, stagger: 0.1,   delay: 0,  ease:"sine.out"})
+  gsap.to(".line", { rotation:0 , x: 0 , opacity:1, duration: 0.3, stagger: 0.1 ,   delay: 0, ease:"sine.out"})
+
+  
+  gsap.fromTo(".sub-num", {x: 100, opacity:0}, {x: 0, opacity:1});
+  gsap.set('.line', {x: 100, opacity:0 });
+  gsap.fromTo(".line", {x: 100, opacity:0 , stagger:0.1 , delay: 0}, {x: 0, opacity:1,stagger:0.1, });
+
+  
   
   const [projectTabState, setProjectTabState ] = useState(true);
 
@@ -29,11 +36,13 @@ export default function AllPosts() {
   function openTab(){
 
     let projectTab = document.querySelector('.project-tab')
+    let homeWrap = document.querySelector('.home-wrap')
 
     projectTab.classList.remove('closed');
     projectTab.classList.add('open');
 
-    // document.querySelector('.work-section').style.background="var(--blk)"
+    // homeWrap.classList.add('hide-nav-links');
+    
 
   }
 
@@ -42,7 +51,7 @@ export default function AllPosts() {
 
     projectTab.classList.add('closed');
     projectTab.classList.remove('open');
-
+    
     
   }
 
@@ -115,7 +124,7 @@ function pathNameStyleing () {
 
       document.querySelector('.about-section').classList.add('inactive')
       document.querySelector('.work-section').classList.remove('inactive')
-    }
+    } 
 
     closeTab()
   }
@@ -154,57 +163,40 @@ function pathNameStyleing () {
 
     <div className="home-wrap work-state">
 
-      <div className="landing-animation">
+      
+
+      <h1 className="footer-name">Riley Karl </h1>
+      <div className="landing-animation"  >
         <h1>Riley Karl </h1>
       </div>
 
-      <div className="nav">
-      
-        <Link to={'/about'} onClick={() => changeHomeState('about')}> 
-           <p className="about-link btn"  >  About </p> 
-        </Link>
-
-        <Link to={'/work'} onClick={() => changeHomeState('work')}> 
-           <p className="work-link-mobile work-link btn">  Work </p> 
-        </Link>
-        
-      
-      </div>
+   
+      <Header changeHomeState = {changeHomeState} />
+  
     
       <div className="movment-wrap">
 
         
         <div className="work-section section active" >
-       
-        
-        
-        
-          
-
-       
-        <Link to={'/work'} onClick={() => changeHomeState('work')}> 
-        <p className="work-link btn btn-inactive"  >  Work </p>
-        </Link>
-
-        
-       
             <div className="all-work">
            
             
-
+              
               <div className="catagorys-title">
 
+                
                 <p className="work-line-index" > Index </p>
                 <p className="work-line-title" > Title </p>
                 <p className="work-line-cat" > Catagories </p>
                 <p className="work-line-date" > Year </p>
+                
                 
               </div>
         
 
             {allPostsData && allPostsData.map((post, index) => (
 
-                <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => openTab()}>
+                <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => openTab() }>
                     <div className="line"></div>
                     <div className="work-line"  key={index}  >
 
@@ -213,8 +205,11 @@ function pathNameStyleing () {
 
                         <img src={post.mainImage.asset.url} alt="" />
                         
-
-                        <p className="work-line-index">{index + 1}</p>
+                         
+                        <p className="work-line-index"> {index}</p>
+                          
+                        
+                        
 
                         <p className="work-line-title" >{post.title}</p>
 
@@ -227,10 +222,13 @@ function pathNameStyleing () {
                               </div>
                               
                 ))} 
+
+
+                        
                         </div>
                         
-
                         <p className="work-line-date"> {post.date}</p>
+                        
                       
                         
                     </div>
@@ -240,7 +238,16 @@ function pathNameStyleing () {
               ))}
             </div>    
 
-            <div  className= 'project-tab closed'  >
+            
+          </div>
+
+          
+          
+          <AboutSection  />
+
+      </div>
+
+      <div  className= 'project-tab closed'  >
 
               
                 <Routes>
@@ -250,11 +257,8 @@ function pathNameStyleing () {
                 </Routes>      
 
             </div >
-          </div>
-          
-          <AboutSection  />
 
+      <Footer/>  
       </div>
-    </div>
   );
 }
