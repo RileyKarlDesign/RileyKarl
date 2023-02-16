@@ -75,11 +75,12 @@ function pathNameStyleing () {
     homeWrap.classList.add('about-state')
 
     workBtn.classList.add('btn-inactive')
+   
     aboutBtn.classList.remove('btn-inactive')
     projectTab.classList.remove('open')
 
-    // aboutSection.classList.add('active')
-    // aboutSection.classList.remove('inactive')
+    aboutSection.classList.remove('inactive')
+    
 
     console.log(" removing open")
 
@@ -87,7 +88,7 @@ function pathNameStyleing () {
 
     workBtn.classList.remove('btn-inactive')
     aboutBtn.classList.add('btn-inactive')
-
+    workSection.classList.remove('inactive')
     homeWrap.classList.add('work-state')
     homeWrap.classList.remove('about-state')
     projectTab.classList.remove('open')
