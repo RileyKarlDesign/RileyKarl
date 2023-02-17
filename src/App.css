@@ -141,7 +141,7 @@ body{
   --grey: rgba(0, 0, 0, 0.307);
   --lite-grey: rgba(157, 157, 157, 0.08);
   /* --inactive: rgb(51, 116, 73); */
-  --inactive: rgb(50, 50, 50);
+  --inactive: rgb(57, 77, 67);
   --wht: rgb(229, 229, 229);
   --blk: rgb(85, 85, 85);
   --shadow: rgb(111, 111, 111);
@@ -213,7 +213,7 @@ h4{
 }
 
 .sub{
-  color: var(--blk);
+  color: var(--grey);
   padding-bottom: var(--pdn );
   
   
@@ -523,6 +523,7 @@ h1{
 .inactive .project-inner{
   background-color: var(--inactive);
   overflow: hidden;
+  
 }
 
 .inactive .about-info{
@@ -1089,6 +1090,7 @@ h1{
   display: flex;
   flex-direction: column;
   
+  
   gap: 5px;
   
   padding-top: calc( var(--pdn) * 6 );
@@ -1128,7 +1130,7 @@ h1{
   display: flex;
   justify-content: space-between;
   width: 450px;
-  height: 100px;
+
   
  position: fixed;
  z-index: 800;
@@ -1155,27 +1157,21 @@ h1{
   border-radius: 4px;
   border: 1px solid var(--grey);
   padding: var(--pdn);
-  
-}
-
-
-.project-info-block{
  
-  display: flex;
-  gap: var(--pdn);
   
-  
-  padding-bottom: 5px !important;
 }
 
-.project-info-block .sub{
-  
-  
-  
-  padding-bottom: 0px !important;
-  width: 50%;
-}
 
+
+
+.info-block{
+  display: grid;
+  padding: 10px 0 10px 0;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--pdm);
+  width: 100%;
+
+}
 
 .project-images{
   width: 100%;
@@ -1187,11 +1183,28 @@ h1{
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--pdn);
+  object-fit: cover;
 
   
   /* background-color: firebrick; */
 }
 
+.projectgrid{
+  display: grid !important;
+  grid-template-columns:  450px 1fr;
+            
+            
+  object-fit: cover;
+}
+
+.projectgrid .project-images{
+
+  width: 100%;
+  height: auto;
+
+  object-fit: fill;
+
+}
 /* .project-inner img{
   width:  calc( 100% - 450px - var(--pdn));
   object-fit: cover;
@@ -1216,6 +1229,7 @@ h1{
     width:  calc( 100% );
     object-fit: cover;
     z-index: 20;
+    background-color: grey;
   }
 }
 
@@ -1244,22 +1258,29 @@ h1{
 .swiper {
   
  
-  max-height: calc( 100vh - var(--pdn ) * 6 );
+  height: calc( 100vh - var(--pdn ) * 10 );
   width: 100%;
+  overflow: visible;
 }
+  
 
 .swiper img{
  
   
   height: 100%;
   object-fit: cover;
+  max-width: calc(100% - 450px - var(--pdn));
+  
 
 }
 
 .swiper-slide{
-  flex-shrink: 1;
-  width: auto;
+  
+  
+  
+  
 
+  
 }
 
 .swiper-pagination{
@@ -1280,3 +1301,53 @@ h1{
 }
 
 
+.swiper-button-next{
+ 
+  right: 0;
+  
+  
+  
+  color: var(--blk) !important;
+  font-size: 0.2em !important;
+ 
+
+}
+
+.swiper-button-prev{
+ 
+
+  right: 0;
+ 
+  color: var(--blk) !important;
+
+  left: calc(100% - 450px);
+  font-size: 0.2em !important;
+  width: 10px;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-family: Helvetica, sans-serif;
+  font-size:0.8rem;
+  text-transform: none!important;
+  letter-spacing: 0;
+  
+  font-variant: initial;
+  line-height: 1;
+}
+/*  non swiper stuff  */
+
+.project-img{
+  
+ 
+  width: 100%;
+  max-height: 120vh;
+  object-fit: cover;
+  
+  
+
+}
+
+.project-img img{
+  
+  
+}

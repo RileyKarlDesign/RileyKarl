@@ -18,7 +18,6 @@ function App() {
         
           <Route element={ <AllPosts /> } path="/*" />
           <Route element={ <AllPosts /> } path="/work/*"  />  
-          
           <Route element={ <AllPosts /> } path="/about/*" exact /> 
 
        </Routes>

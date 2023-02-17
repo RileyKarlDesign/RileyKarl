@@ -4,7 +4,9 @@ import sanityClient from "../client.js";
 // import BlockContent from "@sanity/block-content-to-react";
 import imageUrlBuilder from "@sanity/image-url";
 import CloseBtn from "./CloseBtn.jsx";
-import MySwiper from "./subComponents/MySwiper.jsx";
+import MySwiper from "./subComponents/Gallery.jsx";
+
+import gsap from "gsap";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -16,9 +18,16 @@ export default function OnePost( props ) {
   const { slug } = useParams();
 
 
- 
+  
+
+useEffect(()=>{
 
 
+    gsap.set('.project-img', {y: '100%', opacity:0 });
+    gsap.fromTo(".project-img", {y:'100%', opacity:0 , stagger:0.4}, {y: '0%', opacity:1,stagger:0.1, });
+  
+
+})
   
   
 
@@ -26,7 +35,8 @@ export default function OnePost( props ) {
 
   useEffect(() => {
 
-    
+
+ 
     
     sanityClient
       .fetch(
@@ -34,6 +44,7 @@ export default function OnePost( props ) {
           title,
           slug,
           date,
+          layout,
           mainImage{
             asset->{
               _id,
@@ -88,22 +99,25 @@ export default function OnePost( props ) {
           <div className="project-main-info">
           {/* <h1> {postData.title}</h1> */}
           
+          <p className="sub">
+             Project Infomation
+          </p>
 
-          
-          <div className="project-info-block">
-            <p className="sub"> Titile </p>
+          <div className="line"></div>
+          <div className="info-block  project-info-block">
+            <p className=""> Titile </p>
 
             <p> {postData.title} </p>
           </div>
-
-          <div className="project-info-block">
-            <p className="sub"> Year </p>
+          <div className="line"></div>
+          <div className="info-block  project-info-block">
+            <p className=""> Year </p>
 
             <p> {postData.date} </p>
           </div>
-          
-          <div className="project-info-block">
-          <p className="sub"> Servises </p>
+          <div className="line"></div>
+          <div className="info-block  project-info-block">
+          <p className=""> Servises </p>
             <div className="cats">
 
                 {postData.categories.map( (cat, index) => (
@@ -121,9 +135,9 @@ export default function OnePost( props ) {
       
 
          
-
-            <div className="project-info-block">
-             <p className="sub"> Credits </p>
+          <div className="line"></div>
+            <div className=" info-block project-info-block">
+             <p className=""> Credits </p>
 
              
 
@@ -163,7 +177,7 @@ export default function OnePost( props ) {
         
         
           
-          <div className="project-images">
+          <div className={"project-images " + postData.layout} >
 
           <MySwiper images={postData.images}  />
       

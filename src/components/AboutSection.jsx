@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 
 import imageUrlBuilder from "@sanity/image-url";
+import gsap from "gsap";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -12,6 +13,16 @@ function urlFor(source) {
 export default function AboutSection(props) {
 
   const [aboutData, setAboutData] = useState(null);
+
+
+
+
+
+
+  if(document.querySelector('.sub-num')){
+    gsap.from(".sub-num", {rotation:0, x: "60%" , opacity:0.6, duration: 0.3, stagger: 0.1,   delay: 5,  ease:"sine.out"})
+    gsap.to(".sub-num", { rotation:0 , x: 0 , opacity:1, duration: 0.3, stagger: 0.1 ,   delay: 5, ease:"sine.out"})
+  }
 
   
   useEffect(() => {
