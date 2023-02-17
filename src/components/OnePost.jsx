@@ -4,6 +4,7 @@ import sanityClient from "../client.js";
 // import BlockContent from "@sanity/block-content-to-react";
 import imageUrlBuilder from "@sanity/image-url";
 import CloseBtn from "./CloseBtn.jsx";
+import MySwiper from "./subComponents/MySwiper.jsx";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -15,13 +16,17 @@ export default function OnePost( props ) {
   const { slug } = useParams();
 
 
-  
  
+
+
+  
+  
+
 
 
   useEffect(() => {
 
-   
+    
     
     sanityClient
       .fetch(
@@ -62,19 +67,21 @@ export default function OnePost( props ) {
 
           
 
-
+        
           <div className="project-header">
 
-        
           <div className="project-title-wrapper">
         <p className=" btn btn-inactive  "> {postData.title}</p>
         </div>
+
+        
 
                 <Link to="/work" onClick= { () => props.setTabState() } >
                   <CloseBtn  />
                 </Link>
 
           </div>
+
         
        
 
@@ -111,13 +118,19 @@ export default function OnePost( props ) {
           </div>
           </div>
 
-          <div className="project-info-block">
-          <p className="sub"> Credits </p>
-            <div className="credits">
+      
+
+         
+
+            <div className="project-info-block">
+             <p className="sub"> Credits </p>
+
+             
+
+              <div className="credits">
             
-            
-            {postData.names.map( (name, index) => (
-                  
+                {postData.names.map( (name, index) => (
+
                   <div key={index}>
                     <p>{name}</p>
                     
@@ -125,35 +138,42 @@ export default function OnePost( props ) {
                   
                 ))}
 
-            
               
+                </div>
+
+              </div>
+              
+          
+
+          
+          
+
+          
+         
+
+            
+            
             
          
 
-          </div>
-          </div>
-
+         
           
-          </div>
         
-        
+              </div>
         
         
           
           <div className="project-images">
 
-          {postData.images.map( (img, index) => (
-            
-            <div className="img-wrap project-img" key={index}>
-               
-              <img src={urlFor(img).url()} alt="" />
-            </div>
-            
-          ))}
+          <MySwiper images={postData.images}  />
+      
+
+          
 
           </div>
 
-      
+            
+    
     </div>
-  );
-}
+
+  )};

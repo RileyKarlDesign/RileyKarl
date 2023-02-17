@@ -36,7 +36,7 @@ export default function ResizeSreeen() {
         <div className="mesurments">
 
             <p className='client-width'> 0000 </p>
-            <p className=''> x </p>
+            <p className=''> X </p>
             <p className='client-height'> 0000 </p>
 
         </div>

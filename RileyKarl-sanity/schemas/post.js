@@ -28,6 +28,9 @@ export default defineType({
         hotspot: true,
       },
     }),
+
+   
+    
     
     defineField({
       name: 'categories',
