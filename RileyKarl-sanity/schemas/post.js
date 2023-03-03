@@ -10,6 +10,17 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+    defineField({
+      name: 'about',
+      title: 'About',
+      type: 'text',
+    }),
+    defineField({
+      title: 'Coming Soon',
+      name: 'comingsoon',
+      type: 'boolean'
+    }),
+    
 
     defineField({
       name: 'layout',

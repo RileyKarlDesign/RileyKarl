@@ -3,7 +3,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllPosts from "./components/AllPosts.jsx";
-import "./App.css"
+import "./components/scss/App.scss"
 import OnePost from "./components/OnePost.jsx";
 import AboutSection from "./components/AboutSection.jsx";
 
@@ -18,7 +18,8 @@ function App() {
         
           <Route element={ <AllPosts /> } path="/*" />
           <Route element={ <AllPosts /> } path="/work/*"  />  
-          <Route element={ <AllPosts /> } path="/about/*" exact /> 
+          <Route element={ <AllPosts /> } path="/about/*"  />  
+          
 
        </Routes>
       </div>

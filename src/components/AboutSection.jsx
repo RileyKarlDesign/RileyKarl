@@ -10,6 +10,26 @@ function urlFor(source) {
   return builder.image(source);
 }
 
+// back event lister 
+
+document.addEventListener('onbeforeunload', (event) => { 
+
+  let projectTab = document.querySelector('.project-tab')
+    
+    console.log('back')
+    projectTab.classList.remove('open');
+
+});
+
+
+
+
+
+
+
+
+
+
 export default function AboutSection(props) {
 
   const [aboutData, setAboutData] = useState(null);
@@ -50,19 +70,24 @@ export default function AboutSection(props) {
            }
        }` 
       )
+
+      
       .then((data) => setAboutData(data[0]) && console.log(data))
       .catch(console.error);
+
+
+   
       
   }, []);
 
-  if (!aboutData) return <div className="loading"><div>Loading...</div></div>;
+  if (!aboutData) return <div className=" about-section  "><div>Loading...</div></div>;
 
 
 
   return (
       
 
-    <div className="about-section  inactive section ">
+    <div className="about-section inactive section ">
 
 
       
@@ -77,7 +102,7 @@ export default function AboutSection(props) {
         <div className="hero-block info-blok">
 
         
-        <p className="sub-num"> 01 </p>
+        
         <p className="sub hero-title"> Introduction </p>
         <p className="hero-statement"> {aboutData.hero} </p>
 
@@ -87,13 +112,13 @@ export default function AboutSection(props) {
 
                   <div className="clinets-block">
 
-                      <p className="sub-num"> 02 </p>
+                      
                       
                 <p className="sub"> Selected Clients </p>
 
                     {aboutData.clients.map( (client, index) => (
                           
-                          <div key={index}>
+                          <div key={index.toString()}>
 
                               <p>{client}</p>
                           
@@ -106,7 +131,7 @@ export default function AboutSection(props) {
                     <p className="sub" >Reconition</p>
                         {aboutData.recognition.map( (rec, index) => (
                               
-                              <div key={index}>
+                              <div key={index.toString()}>
                                 <p>{rec}</p>
                               
                               </div>
@@ -116,14 +141,14 @@ export default function AboutSection(props) {
 
                   <div className="pen-block">
 
-                  <p className="sub-num"> 03 </p>
+                  
                   <div className="pen-block-wrap">
                       <p className="sub" >Pen Recomendations</p>
                   
 
                         {aboutData.pens.map( (pen, index) => (
                                     
-                                    <div key={index}>
+                                    <div key={index.toString()}>
                                       <p>{pen}</p>
                                     
                                     </div>

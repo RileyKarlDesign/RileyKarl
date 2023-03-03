@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import sanityClient from "../client.js";
 // import BlockContent from "@sanity/block-content-to-react";
 import imageUrlBuilder from "@sanity/image-url";
@@ -18,7 +18,11 @@ export default function OnePost( props ) {
   const { slug } = useParams();
 
 
-  
+  let mainDoc = document.querySelector('.project-open')
+
+
+
+const navigate = useNavigate()
 
 useEffect(()=>{
 
@@ -35,15 +39,19 @@ useEffect(()=>{
 
   useEffect(() => {
 
-
+    props.setProjectState(true)
  
     
     sanityClient
+
+      
+
       .fetch(
         `*[slug.current == $slug]{
           title,
           slug,
           date,
+          about,
           layout,
           mainImage{
             asset->{
@@ -87,7 +95,7 @@ useEffect(()=>{
 
         
 
-                <Link to="/work" onClick= { () => props.setTabState() } >
+                <Link to="/work" onClick= { () => props.setProjectState(false) } >
                   <CloseBtn  />
                 </Link>
 
@@ -103,41 +111,72 @@ useEffect(()=>{
              Project Infomation
           </p>
 
+          { !postData.about || (
+            <> 
+
+            
+            <div className="about-info-block ">
+             
+
+              <p> {postData.about} </p>
+            </div>  
+
+            </>
+          )}
+
+          { !postData.title || (
+          <> 
           <div className="line"></div>
           <div className="info-block  project-info-block">
-            <p className=""> Titile </p>
+            <p className="half"> Titile </p>
 
             <p> {postData.title} </p>
           </div>
+
+          </>
+
+          )}
+
+
+        { !postData.year || (
+          <> 
           <div className="line"></div>
           <div className="info-block  project-info-block">
-            <p className=""> Year </p>
+            <p className="half"> Year </p>
 
             <p> {postData.date} </p>
           </div>
-          <div className="line"></div>
-          <div className="info-block  project-info-block">
-          <p className=""> Servises </p>
-            <div className="cats">
+          </>
+        )}
 
-                {postData.categories.map( (cat, index) => (
-                  
-                  <div key={index}>
-                    <p>{cat}</p>
+
+          { !postData.categories || (
+          <> 
+            <div className="line"></div>
+            <div className="info-block  project-info-block">
+            <p className="half"> Servises </p>
+              <div className="cats">
+
+                  {postData.categories.map( (cat, index) => (
                     
-                  </div>
-                  
-                ))} 
+                    <div key={index}>
+                      <p>{cat}</p>
+                      
+                    </div>
+                    
+                  ))} 
 
-          </div>
-          </div>
-
+            </div>
+            </div>
+          </>
+          )}
       
 
-         
+      { !postData.names > 0 || (
+        <> 
           <div className="line"></div>
             <div className=" info-block project-info-block">
-             <p className=""> Credits </p>
+             <p className="half"> Credits </p>
 
              
 
@@ -156,7 +195,8 @@ useEffect(()=>{
                 </div>
 
               </div>
-              
+              </>
+      )}    
           
 
           
@@ -177,7 +217,7 @@ useEffect(()=>{
         
         
           
-          <div className={"project-images " + postData.layout} >
+          <div className={"project-images "} >
 
           <MySwiper images={postData.images}  />
       

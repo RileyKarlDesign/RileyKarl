@@ -5,7 +5,8 @@ export default function Header(props) {
   return (
 
     <> 
-    <p className='logo'> Riley Isiaiah Karl</p>
+    <p className='logo'> Riley Isiaiah Karl </p>
+    
     
     <div className="nav">
         
@@ -17,7 +18,7 @@ export default function Header(props) {
         </Link>
        
         <Link to={'/work'} onClick={() => props.changeHomeState('work')}> 
-            <p className="work-link work-link btn">  Work </p> 
+            <p className="work-link btn-inactive btn">  Work </p> 
         </Link>
         
         

@@ -1,10 +1,11 @@
 // src/components/AllPosts.js
 
 import React, { useEffect, useState } from "react";
-import { Link, Route, Routes, useParams } from "react-router-dom";
+import { Link, Route, Routes, useParams, useNavigate} from "react-router-dom";
 import sanityClient from "../client.js";
 import AboutSection from "./AboutSection";
 import OnePost from "./OnePost.jsx";
+import gsap from "gsap";
 
 import Footer from "./subComponents/Footer.jsx";
 import Header from "./subComponents/Header.jsx";
@@ -20,19 +21,24 @@ export default function AllPosts() {
   const [projectTabState, setProjectTabState ] = useState(true);
 
   const [allPostsData, setAllPosts] = useState(null);
+  const [projectState, setProjectState] = useState(null)
 
-  function openTab(){
+  const[homeSlideState, setHomeSlideState] = useState('work')
 
-    let projectTab = document.querySelector('.project-tab')
-    let homeWrap = document.querySelector('.home-wrap')
+  let openTab = () => {
 
-    projectTab.classList.remove('closed');
-    projectTab.classList.add('open');
+    // let projectTab = document.querySelector('.project-tab')
+    // let homeWrap = document.querySelector('.home-wrap')
+
+    // projectTab.classList.remove('closed');
+    // projectTab.classList.add('open');
 
     // homeWrap.classList.add('hide-nav-links');
     
-
+    setProjectState(true)
   }
+
+  
 
   function closeTab(){
     let projectTab = document.querySelector('.project-tab')
@@ -42,6 +48,8 @@ export default function AllPosts() {
     
     
   }
+
+  let navigate = useNavigate()
 
   const pathName = window.location.pathname 
 
@@ -59,7 +67,9 @@ function pathNameStyleing () {
 
     if ( pathName === '/about'){
 
-      alert('about')
+      setHomeSlideState('about')
+      
+      
     
     homeWrap.classList.remove('work-state')
     homeWrap.classList.add('about-state')
@@ -71,12 +81,17 @@ function pathNameStyleing () {
 
     aboutSection.classList.remove('inactive')
     
+    if(aboutSection){
+      console.log('')
+    }
 
     console.log(" removing open")
 
   } else if (pathName === '/work'){
 
-    alert('work')
+    
+
+    setHomeSlideState('work')
 
     workBtn.classList.remove('btn-inactive')
     aboutBtn.classList.add('btn-inactive')
@@ -85,7 +100,7 @@ function pathNameStyleing () {
     homeWrap.classList.remove('about-state')
     projectTab.classList.remove('open')
 
-    console.log(" removing open")
+    console.log("removing open")
   }
 }
 
@@ -110,8 +125,10 @@ function pathNameStyleing () {
           homeWrap.classList.remove('work-state')
           homeWrap.classList.add('about-state')
           
-
-          aboutSection.classList.remove('inactive')
+          if(aboutSection){
+            aboutSection.classList.remove('inactive')
+          }
+         
           workSection.classList.add('inactive')
 
           
@@ -119,7 +136,7 @@ function pathNameStyleing () {
       
       aboutBtn.classList.remove('btn-inactive')
       workBtn.classList.add('btn-inactive')
-
+      setProjectState(false)
       document.querySelector('.home-wrap').classList.remove('about-state')
       document.querySelector('.home-wrap').classList.add('work-state')
 
@@ -130,23 +147,58 @@ function pathNameStyleing () {
     closeTab()
   }
 
+ 
+
+  function handleEvent(){
+    
+    setProjectState(false)
+  }
+  
+  // cursor movement / Functionality
+let cursor = () => {
+    document.addEventListener( 'mousemove', (e) => {
+
+      let hoverImages= document.querySelectorAll('.hover-img')
+
+     
+        var x = e.clientX - 150;
+        var y = e.clientY - 0;
+        hoverImages.forEach((e)=>{
+          e.style.transform= "translate(" + x+ "px," +  y  + "px)";
+        })
+        
+        
+
+        
+    } )
+
+}
+
+cursor()
+
+
   useEffect(() => {
 
+    window.addEventListener("popstate", handleEvent)
     pathNameStyleing()
+
+   
+    
 
     sanityClient
       .fetch(
-        `*[_type == "post"]{
+        `*[_type == "post"] | order(date desc) {
         title,
         slug,
         date,
+        comingsoon,
         'categories': categories[] -> title,
         mainImage{
           asset->{
           _id,
           url
         },
-        
+        magesGallery,
         
         
 
@@ -157,6 +209,10 @@ function pathNameStyleing () {
       .catch(console.error);
   }, []);
 
+ 
+
+
+
 
 
   return (
@@ -166,27 +222,29 @@ function pathNameStyleing () {
     
       <ResizeSreeen />
       
+      
 
       <h1 className="footer-name">Riley Karl </h1>
+      
       <div className="landing-animation"  >
-        <h1>Riley Karl </h1>
+        <h1>Riley Karl  </h1>
       </div>
 
    
-      <Header changeHomeState = {changeHomeState} />
+      <Header changeHomeState = {changeHomeState} setHomeSlideState={setAllPosts} homeSlideState={homeSlideState}/>
   
     
       <div className="movment-wrap">
 
         
-        <div className="work-section section active" >
+        <div className= {`work-section section active ${projectState ? "project-open" : ""}`} >
             <div className="all-work">
            
             
               
               <div className="catagorys-title">
 
-                
+              
                 <p className="work-line-index" > Index </p>
                 <p className="work-line-title" > Title </p>
                 <p className="work-line-cat" > Catagories </p>
@@ -197,29 +255,36 @@ function pathNameStyleing () {
         
 
             {allPostsData && allPostsData.map((post, index) => (
+             
 
-                <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => openTab() }>
+                <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => setProjectState(true) }>
                     <div className="line"></div>
                     <div className="work-line"  key={index}  >
 
-                      <div className="work-box">
-                        </div>  
+                      
 
-                        <img src={post.mainImage.asset.url} alt="" />
+                    <div className="hover-img">
+                      <img className="project-hover-img" src={post.mainImage.asset.url} alt="" />
+                    </div>
+                    
+                        
+                        
                         
                          
-                        <p className="work-line-index"> {index}</p>
+                        <p className="work-line-index"> {index + 1}</p>
                           
-                        
+                       
                         
 
                         <p className="work-line-title" >{post.title}</p>
 
+                      { !post.categories || (
+                      
                         <div className="work-catagory">
                         {post.categories.map( (cat, index) => (
                   
-                              <div className= 'line-cat' key={index}>
-                                <p>{cat}</p>
+                              <div className= 'line-cat' key={index.toString()}>
+                                <p key={cat}>{cat}</p>
                                 
                               </div>
                               
@@ -228,7 +293,8 @@ function pathNameStyleing () {
 
                         
                         </div>
-                        
+
+                        )}
                         <p className="work-line-date"> {post.date}</p>
                         
                       
@@ -236,7 +302,7 @@ function pathNameStyleing () {
                     </div>
 
                 </Link>
-
+                      
               ))}
             </div>    
 
@@ -249,12 +315,12 @@ function pathNameStyleing () {
 
       </div>
 
-      <div  className= 'project-tab closed'  >
+      <div  className= {`project-tab ${projectState ? "open" : "closed"}`}  >
 
               
                 <Routes>
 
-                  <Route element={ <OnePost setTabState = {closeTab}  /> } path="/:slug" />
+                  <Route element={ <OnePost setTabState = {closeTab} setProjectState={ setProjectState} /> } path="/:slug" />
 
                 </Routes>      
 
