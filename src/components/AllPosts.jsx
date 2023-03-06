@@ -239,16 +239,22 @@ cursor()
         
         <div className= {`work-section section active ${projectState ? "project-open" : ""}`} >
             <div className="all-work">
-           
+
             
+            {/* <div className="work-section-title">
+              <h1> Live Projects </h1>
+              <h1> 09 </h1>
+            </div> */}
               
               <div className="catagorys-title">
 
               
-                <p className="work-line-index" > Index </p>
-                <p className="work-line-title" > Title </p>
-                <p className="work-line-cat" > Catagories </p>
-                <p className="work-line-date" > Year </p>
+                <p className="work-line-index " > Index </p>
+                <p className="work-line-title " > Title </p>
+                <p className="work-line-cat  " > Catagories </p>
+                <p className="work-line-date  " > Year </p>
+                
+                
                 
                 
               </div>
@@ -271,7 +277,7 @@ cursor()
                         
                         
                          
-                        <p className="work-line-index"> {index + 1}</p>
+                        <p className="work-line-index"> { index + 1 < 10 ? `0${index + 1}`: index }</p>
                           
                        
                         
@@ -295,15 +301,27 @@ cursor()
                         </div>
 
                         )}
-                        <p className="work-line-date"> {post.date}</p>
+                        <div className="work-line-date"> 
                         
-                      
+                        <p> {post.date}</p>
+                        <div className="work-line-dot">
+
+                          </div>
+                        </div>
+                        
+                          
                         
                     </div>
 
                 </Link>
                       
               ))}
+
+            {/* <div className="work-section-title">
+              <h1> Upcoming  </h1>
+            </div> */}
+
+
             </div>    
 
             

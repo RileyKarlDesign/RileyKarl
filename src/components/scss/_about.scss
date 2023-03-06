@@ -44,10 +44,15 @@
 
   .all-about{
 
-    min-width: 100vw;
-    display: flex;
+    
+    min-width: calc(100vw - var(--pdn ) * 2 );
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: flex-end;
     overflow: scroll;
+    padding: var(--pdn);
+    padding-top: calc( var(--pdn) * 7);
     
 
   }
@@ -57,7 +62,7 @@
    
     padding: var(--pdn);
     padding-top: 0;
-    height: calc( 100vh  );
+    height: 100%;
    
     position: relative;
 
@@ -82,50 +87,26 @@
 
   @media only screen and (max-width: 1000px) {
    
-
-    
-  }
-
-  .profilepic{
-    
-    position: fixed;
-   
-    opacity: 0;
-    left: 0;
-    width: 450px; 
-    height: 100vh;
-    bottom: 0;
-    opacity: 0.2;
-    z-index: 10;
-    background-color: var(--wht);
-    display: none;
-    overflow: hidden;
-    
-  }
-
-  .profilepic img{
-    
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    mix-blend-mode:luminosity ;
-
-    
-  }
-
-  @media only screen and (max-width: 1000px) {
-    .profilepic{
-      position: relative !important;
-      left: -10px;
-      height: 100px ;
-      grid-column: 1 / 13;
-      left: 0px;
-      display: none;
-      
+    .all-about{
+        grid-template-columns: 1fr 1fr ;
     }
 
     
   }
+
+.about-contact{
+    
+    position: sticky;
+  top: 0;
+  align-self: start;
+
+  img{
+    width: 12vw;
+    height: 14vw;
+    object-fit: cover;
+    margin-bottom:calc( var(--pdn) * 2 );
+}
+}
 
  
 
@@ -142,19 +123,18 @@
   
 
   .about-info{
-    width: calc(100vw - var(--pdn) * 2 );
+    width: 100%;
+    grid-column: 3/4;
     height: fit-content;
-    padding-right: var(--pdn);
-    padding-left: calc(100% - 450px - var(--pdn) );
-    padding-top: calc(var(--pdn) * 4);
+
    
-    
+
    }
 
   @media only screen and (max-width: 1000px) {
     .about-info {
       width: 100%;
-      padding-left: var(--pdn);
+      
     }
   }
 
@@ -162,6 +142,10 @@
     display: grid;
     grid-template-columns: repeat(7,1fr);
     gap: var(--pdn);
+  }
+
+  .i-block{ 
+    margin-bottom:  calc( var(--pdn) * 4 );
   }
 
   .hero-block{
@@ -182,7 +166,8 @@
     grid-row: 2;
     /* background-color: red; */
     display: flex;
-    height: fit-content
+    height: fit-content;
+    margin-bottom: calc(var(--pdn) * 10)
 
     
   }

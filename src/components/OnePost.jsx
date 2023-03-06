@@ -89,15 +89,22 @@ useEffect(()=>{
         
           <div className="project-header">
 
-          <div className="project-title-wrapper">
-        <p className=" btn btn-inactive  "> {postData.title}</p>
-        </div>
+          <div className="project-header-contnet">
+
+                <div className="project-title-wrapper">
+              <p className=" btn btn-inactive  "> {postData.title}</p>
+              </div>
+
+              <Link to="/work" onClick= { () => props.setProjectState(false) } >
+                  <CloseBtn  />
+                </Link>
+
+          </div>
+        
 
         
 
-                <Link to="/work" onClick= { () => props.setProjectState(false) } >
-                  <CloseBtn  />
-                </Link>
+                
 
           </div>
 

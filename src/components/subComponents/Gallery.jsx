@@ -6,9 +6,9 @@ import sanityClient from "../../client.js";
 import 'swiper/css';
 
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, FreeMode, A11y, Mousewheel , Autoplay , loop} from 'swiper';
+// import { Navigation, Pagination, Scrollbar, FreeMode, A11y, Mousewheel , Autoplay , loop} from 'swiper';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -24,7 +24,7 @@ function urlFor(source) {
 }
 
 
-export default (data) => {
+export default function Gallery (data){
   return (
   //   <Swiper
   //   // install Swiper modules

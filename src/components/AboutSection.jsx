@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 
 import imageUrlBuilder from "@sanity/image-url";
-import gsap from "gsap";
+
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -39,10 +39,10 @@ export default function AboutSection(props) {
 
 
 
-  if(document.querySelector('.sub-num')){
-    gsap.from(".sub-num", {rotation:0, x: "60%" , opacity:0.6, duration: 0.3, stagger: 0.1,   delay: 5,  ease:"sine.out"})
-    gsap.to(".sub-num", { rotation:0 , x: 0 , opacity:1, duration: 0.3, stagger: 0.1 ,   delay: 5, ease:"sine.out"})
-  }
+  // if(document.querySelector('.sub-num')){
+  //   gsap.from(".sub-num", {rotation:0, x: "60%" , opacity:0.6, duration: 0.3, stagger: 0.1,   delay: 5,  ease:"sine.out"})
+  //   gsap.to(".sub-num", { rotation:0 , x: 0 , opacity:1, duration: 0.3, stagger: 0.1 ,   delay: 5, ease:"sine.out"})
+  // }
 
   
   useEffect(() => {
@@ -94,12 +94,22 @@ export default function AboutSection(props) {
     <div className="all-about">
     
 
-    
+    <div className="about-contact">
+          {/* <div className="profile-img">
+
+          <img  src={aboutData.mainImage.asset.url} alt='rileykarl' />
+           
+          </div> */}
+          <p className="sub"> Contact </p>
+        <p> P : 027 456 374  </p>
+        <p> E : rileykarldesign@gmail.com  </p>
+        <p> I : @riley.karl </p>
+      </div>
 
     <div className="about-info">
 
       <div>
-        <div className="hero-block info-blok">
+        <div className="hero-block i-block">
 
         
         
@@ -110,7 +120,7 @@ export default function AboutSection(props) {
     
         <div className="about-body">
 
-                  <div className="clinets-block">
+                  <div className="clinets-block i-block">
 
                       
                       
@@ -127,7 +137,7 @@ export default function AboutSection(props) {
                         ))}
 
                   </div>
-                  <div className="reconition-block">
+                  <div className="reconition-block i-block">
                     <p className="sub" >Reconition</p>
                         {aboutData.recognition.map( (rec, index) => (
                               
@@ -139,10 +149,10 @@ export default function AboutSection(props) {
                             ))}
                   </div>
 
-                  <div className="pen-block">
+                  <div className="pen-block i-block ">
 
                   
-                  <div className="pen-block-wrap">
+                  <div className="pen-block-wrap i-block ">
                       <p className="sub" >Pen Recomendations</p>
                   
 
@@ -184,6 +194,8 @@ export default function AboutSection(props) {
           </div> */}
           
       </div>
+
+    
       </div>
       
     </div>
