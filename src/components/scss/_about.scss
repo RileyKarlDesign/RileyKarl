@@ -8,7 +8,7 @@
 .about-state .work-section{
     width: 0vw;
     min-height: 100vh;
-    background-color: red;
+    background-color: var(--blk)
   
 }
 
@@ -44,17 +44,12 @@
 
   .all-about{
 
-    
-
-    
     min-width: 100vw;
     display: flex;
     justify-content: flex-end;
     overflow: scroll;
-    margin-bottom: 50px;
     
-   
-   
+
   }
 
   .about-section{
@@ -148,7 +143,7 @@
 
   .about-info{
     width: calc(100vw - var(--pdn) * 2 );
-
+    height: fit-content;
     padding-right: var(--pdn);
     padding-left: calc(100% - 450px - var(--pdn) );
     padding-top: calc(var(--pdn) * 4);

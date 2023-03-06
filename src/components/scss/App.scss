@@ -73,7 +73,7 @@ body{
 @media only screen and (max-width: 1000px) {
   
 .logo{
-  z-index: 10;
+  z-index: 16;
 }
 }
 
@@ -88,6 +88,7 @@ body{
   padding: var(--pdn);
   z-index: 99999999;
   background-color: var(--wht);
+  // border-top: 1px solid var(--blk);
 
   
  
@@ -258,10 +259,10 @@ h1{
   top: 0;
   left:0;
   right: 0;
-  background-color: rgba(255, 0, 0, 0);
+
   backdrop-filter: blur(4px);
   padding: var(--pdn);
-  border-bottom: 1px solid black;
+  // border-bottom: 1px solid var(--blk);
   display: flex;
   
   justify-content: flex-end;
@@ -433,12 +434,13 @@ h1{
 
 
 .section{
-  padding: var(--pdn) 0 ;
+  
   height: calc(100vh - var(--pdn) * 2);
 
   width: 100vw;
 
   transition: ease all 1s;
+  overflow: hidden;
  
   
   

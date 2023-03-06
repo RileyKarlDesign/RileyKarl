@@ -14,7 +14,7 @@ export default function Header(props) {
         <div className='nav-links' >
       
         <Link to={'/about'} onClick={() => props.changeHomeState('about')}> 
-            <p className="about-link btn"  >  Infomation </p> 
+            <p className="about-link btn"  >  About </p> 
         </Link>
        
         <Link to={'/work'} onClick={() => props.changeHomeState('work')}> 
