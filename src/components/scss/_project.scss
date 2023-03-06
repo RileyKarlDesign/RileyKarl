@@ -169,6 +169,25 @@
    z-index: 800;
   
   }
+
+
+  @media only screen and (max-width: 1000px) {
+   
+    .project-header{
+        display: flex;
+        justify-content: space-between;
+        
+      
+        
+
+       position: fixed;
+       left: var(--pdn);
+       width: calc( 100% - var(--pdn) * 2);
+       z-index: 800;
+      
+      }
+
+   }
   
   .project-title-wrapper{
    
@@ -234,6 +253,7 @@
 
         .project-img{
            padding: var(--pdn);
+           padding-bottom: 0;
            width: calc( 100% - var(--pdn) * 2)
 
         }

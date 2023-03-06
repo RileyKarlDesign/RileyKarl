@@ -70,6 +70,13 @@ body{
   z-index: 9999999;
 }
 
+@media only screen and (max-width: 1000px) {
+  
+.logo{
+  z-index: 10;
+}
+}
+
 .main-footer{
   position: absolute;
   display: flex ;
@@ -258,6 +265,7 @@ h1{
 
 }
 
+
 .nav-links{
   display: flex;
   gap: 5px;
@@ -267,6 +275,23 @@ h1{
   width: 450px;
   
 }
+
+@media only screen and (max-width: 1000px) {
+  .nav{
+   
+  }
+
+  .nav-links{
+    display: flex;
+    gap: var(--pdn);
+    /* width: 900px; */
+    justify-content: flex-end;
+    /* flex-direction: row-reverse; */
+    width: 450px;
+    
+  }
+ }
+ 
 /* 
 .hide-nav-links .nav-links{
 
