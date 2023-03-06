@@ -87,10 +87,13 @@ body{
   bottom: 0 ;
   padding: var(--pdn);
   z-index: 99999999;
+  background-color: var(--wht);
 
   
  
 }
+
+
 
 .footer-contact{
   display: flex;
@@ -252,10 +255,13 @@ h1{
 .nav{
 
   position: fixed;
-  top: var(--pdn);
-  left: var(--pdn);
-  right: var(--pdn);
-  
+  top: 0;
+  left:0;
+  right: 0;
+  background-color: rgba(255, 0, 0, 0);
+  backdrop-filter: blur(4px);
+  padding: var(--pdn);
+  border-bottom: 1px solid black;
   display: flex;
   
   justify-content: flex-end;

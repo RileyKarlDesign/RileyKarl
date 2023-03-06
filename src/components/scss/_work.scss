@@ -141,7 +141,7 @@
     }
   
     .work-line{
-      padding: 0 10px;
+      padding: 0 15px;
       
       display: flex;
       align-items: center;
@@ -264,12 +264,22 @@
   
     .work-line-title{
       width: 20vw;
-      grid-column: 1/5;
+      grid-column: 2/5;
     }
+
+    @media only screen and (max-width: 1000px) {
+  
+        .work-line-title{
+            width: 20vw;
+            grid-column: 1/5;
+          }
+
+       
+        }
   
   
     .work-line-cat{
-      grid-column: 5/10;
+      grid-column: 5/12;
       width: max-content;
       
     }
@@ -279,7 +289,7 @@
       width: 100%;
       display: flex;
       gap: 6px;
-      grid-column: 5/10;
+      grid-column: 5/13;
       flex-wrap: wrap;
       
      

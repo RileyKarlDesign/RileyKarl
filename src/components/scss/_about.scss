@@ -50,6 +50,8 @@
     min-width: 100vw;
     display: flex;
     justify-content: flex-end;
+    overflow: scroll;
+    margin-bottom: 50px;
     
    
    
@@ -64,10 +66,11 @@
    
     position: relative;
 
-    overflow: scroll;
+    overflow: hidden;
     padding: 0;
     display: flex;
     justify-content: flex-end;
+
     
     
     
