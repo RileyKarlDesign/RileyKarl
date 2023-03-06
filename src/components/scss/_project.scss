@@ -54,6 +54,7 @@
   
     filter: drop-shadow( 0px 0px 20px var(--shadow));
     transition: ease all 1s;
+    width: 100%;
     
   }
   
@@ -63,9 +64,8 @@
   
   .closed{
     top:100%;
-    right: 0%; 
-    left: 0;
-    bottom: 0;
+    
+   
     background-color: var(--inactive);
     transition: ease all 1s;
     // border-radius:600px 600px 0 0 ;
@@ -75,9 +75,7 @@
   
   .open{
     top: 0% ;
-    right: 0%;
-    left: 0;
-    bottom: 0;
+   
     transition: ease all 1s;
     
     overflow: hidden;
@@ -126,7 +124,8 @@
   @media only screen and (max-width: 1000px) {
     .project-main-info {
       
-      padding-left: var(--pdn);
+      
+      width: calc(100% - var(--pdn)* 2 );
     }
   }
   
@@ -139,7 +138,7 @@
   
   .project-inner{ 
     
-    width: 100%;
+    
     overflow-x: scroll;
     /* background-color: var(--wht); */
     
@@ -153,6 +152,7 @@
     gap: var(--pdn);
     overflow-x: hidden;
     z-index: 100000000;
+    
     
     
   }
@@ -224,7 +224,20 @@
   }
 
   @media only screen and (max-width: 1000px) {
-   
+    
+    .project-images{
+
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        display: block;
+
+        .project-img{
+           padding: var(--pdn);
+           width: calc( 100% - var(--pdn) * 2)
+
+        }
+    } 
   }
   
   .projectgrid{
