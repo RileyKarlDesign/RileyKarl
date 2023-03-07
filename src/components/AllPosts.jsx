@@ -265,7 +265,7 @@ cursor()
 
                 <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => setProjectState(true) }>
                     <div className="line"></div>
-                    <div className="work-line"  key={index}  >
+                    <div className="work-line"  key={index + post.title}  >
 
                       
 
@@ -289,8 +289,8 @@ cursor()
                         <div className="work-catagory">
                         {post.categories.map( (cat, index) => (
                   
-                              <div className= 'line-cat' key={index.toString()}>
-                                <p key={cat}>{cat}</p>
+                              <div className= 'line-cat' key={index.toString() + cat }>
+                                <p key={cat + post.title }>{cat}</p>
                                 
                               </div>
                               

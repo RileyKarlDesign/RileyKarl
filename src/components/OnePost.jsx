@@ -166,7 +166,7 @@ useEffect(()=>{
 
                   {postData.categories.map( (cat, index) => (
                     
-                    <div key={index}>
+                    <div key={index + cat + index }>
                       <p>{cat}</p>
                       
                     </div>
@@ -191,7 +191,7 @@ useEffect(()=>{
             
                 {postData.names.map( (name, index) => (
 
-                  <div key={index}>
+                  <div key={index + name}>
                     <p>{name}</p>
                     
                   </div>

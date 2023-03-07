@@ -53,6 +53,8 @@
     overflow: scroll;
     padding: var(--pdn);
     padding-top: calc( var(--pdn) * 7);
+
+    gap: var(--pdn);
     
 
   }
@@ -88,7 +90,7 @@
   @media only screen and (max-width: 1000px) {
    
     .all-about{
-        grid-template-columns: 1fr 1fr ;
+        grid-template-columns: 1fr ;
     }
 
     
@@ -107,6 +109,15 @@
     margin-bottom:calc( var(--pdn) * 2 );
 }
 }
+
+@media only screen and (max-width: 1000px) {
+   
+    .about-contact{
+    
+        position: unset;
+
+    }
+  }
 
  
 

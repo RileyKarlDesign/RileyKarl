@@ -23,7 +23,7 @@
   }
 
   .project-open{
-    background-color: var(--blk);
+    background-color: var(--inactive);
     pointer-events: none;
 
     
@@ -172,7 +172,7 @@
    
   justify-content: flex-end;
   border-bottom: 1px solid var(--blk);
-  background-color: var(--lite-grey);
+  background-color: var(--wht);
 
    .project-header-contnet{
     width: 30%;
@@ -194,8 +194,15 @@
        left: 0;
        width: calc( 100% - var(--pdn) * 2);
        z-index: 800;
-      
+       padding-left: var(--pdn);
       }
+
+      .project-header-contnet{
+        width: 100% !important;
+        display: flex;
+        justify-content: space-between;
+        
+       }
 
    }
   
@@ -241,11 +248,12 @@
     padding-top: calc( var(--pdn) * 6 );
     padding-bottom: calc( var(--pdn) * 3 );
     
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr   ;
+    // flex-direction: column;
+    // align-items: flex-start;
+    // justify-content: flex-start;
+    gap: var(--pdn);
     object-fit: cover;
   
     

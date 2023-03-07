@@ -168,18 +168,18 @@ body{
 
 :root {
   --pdn: 10px;
-  --grey: #686060;
-  --lite-grey: #191717;
+  --grey: #fc490da0;
+  --lite-grey: #ebdcd6;
   /* --inactive: rgb(51, 116, 73); */
-  --inactive: rgb(239, 68, 0);
-  --wht: #242222;
-  --lite-wht: rgba(225, 225, 225, 0.884);
-  --blk: #b7b7b7;
-  --line: #92929268;
+  --inactive: #fc490d;
+  --wht: #ebebeb;
+  --lite-wht: #ff51003e;
+  --blk: #fc490d;
+  --line: #ff400036;
   --shadow: rgb(111, 111, 111);
   --closed-window: 50px;
   --window-width: calc(100vw - var(--closed-window));
-  --shadow: rgba(0, 0, 0, 0.899);
+  --shadow: #fc490d;;
 }
 
 
@@ -234,7 +234,7 @@ p{
 
 @media only screen and (max-width: 1000px) {
   p,a {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 
   }
 }
@@ -283,7 +283,8 @@ h1{
   z-index: 15;
   background-color: var(--wht);
 
-  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
   
   
@@ -293,17 +294,20 @@ h1{
 
 .nav-links{
   display: flex;
-  gap: 15px;
+  grid-column: 3/4;
+  gap: var(--pdn);
   /* width: 900px; */
-  
+ 
   /* flex-direction: row-reverse; */
-  width: 30%;
-  justify-content: flex-end;
+  width: 100%;
+  justify-content: space-between;
   
 }
 
 @media only screen and (max-width: 1000px) {
   .nav{
+
+   
    
   }
 
@@ -313,7 +317,7 @@ h1{
     /* width: 900px; */
     justify-content: flex-end;
     /* flex-direction: row-reverse; */
-    width: 30%;
+    
     
   }
  }

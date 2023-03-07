@@ -51,7 +51,7 @@
     
     min-width: calc(100vw - var(--pdn) * 2);
     padding: var(--pdn);
-    padding-top: calc( var(--pdn) * 4);
+    padding-top: calc( var(--pdn) * 7);
     
     
     top: 0;
@@ -122,7 +122,7 @@
     
     .catagorys-title{
       display: grid;
-      grid-template-columns: 1fr 2fr 3fr 2fr ;
+      grid-template-columns: 1fr 2fr 3fr 3fr ;
       padding: var(--pdn) 0; 
       gap: var(--pdn);
       
@@ -155,7 +155,7 @@
       display: flex;
       align-items: center;
       display: grid;
-      grid-template-columns: 1fr 2fr 3fr 2fr ;
+      grid-template-columns: 1fr 2fr 3fr 3fr ;
       gap: var(--pdn);
       padding: 8px 3px;
       background-color: transparent;
@@ -191,7 +191,7 @@
         left: 0;
         top: 0;
         width: 150px;
-        height: 200px;
+        height: auto;
         z-index: 1000000;
         z-index: -1;
 
