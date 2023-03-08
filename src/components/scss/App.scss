@@ -69,7 +69,7 @@ body{
   
   display: flex;
   justify-content: center;
-  z-index: 999;
+  z-index: 18;
   pointer-events: none;
 }
 
@@ -164,15 +164,15 @@ body{
   --grey: #4d4d4da0;
   --lite-grey: #ebdcd6;
   /* --inactive: rgb(51, 116, 73); */
-  --inactive: #ff5900;
-  --wht: #171717;
+  --inactive: #c6c6c6;
+  --wht: #171616;
   --lite-wht: #4242423e;
   --blk: rgb(246, 246, 246);
   --line: #58585836;
   --shadow: rgb(40, 40, 40);
   --closed-window: 50px;
   --window-width: calc(100vw - var(--closed-window));
-  --shadow: #ff4400;;
+  --shadow: #0d00ff;
 }
 
 
@@ -460,13 +460,16 @@ h1{
 
 .section{
   
-  height: 1005;
+  height: 100%;
 
   max-height: 100vh;
   width: 100vw;
 
   transition: ease all 1s;
   overflow: hidden;
+
+ 
+  
  
   
   

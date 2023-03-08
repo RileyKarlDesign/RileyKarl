@@ -16,7 +16,7 @@
     /* animation-name: pulse;
     animation-duration: 3s;
     animation: fadeIn 3s; */
-    
+    border-radius:5px;
     position: absolute;
      background-color: var(--wht); 
      
@@ -33,7 +33,7 @@
     bottom: 0;
     left: 0;
   
-    filter: drop-shadow( 0px 0px 80px var(--shadow));
+    filter: drop-shadow( 0px -0px 50px var(--inactive));
     transition: ease all 1s;
     width: 100%;
     
@@ -55,7 +55,7 @@
   }
   
   .open{
-    top: 0% ;
+    top: 34px ;
    
     transition: ease all 1s;
     
@@ -175,7 +175,7 @@
    
   justify-content: flex-end;
   // border-bottom: 1px solid var(--blk);
-  background-color: var(--wht);
+  
 
    .project-header-contnet{
     width: 33.1%;
@@ -217,7 +217,7 @@
     .project-header{
         display: flex;
         justify-content: flex;
-        
+        background-color: var(--wht);
        position: fixed;
        left: 0;
        right: 0;
@@ -277,7 +277,7 @@
   
   .project-images{
     
-    padding-top: calc( var(--pdn) * 4 );
+    padding-top: calc( var(--pdn) * 1 );
     padding-bottom: calc( var(--pdn) * 3 );
     padding-left: 0;
     display: grid;
@@ -291,7 +291,7 @@
     
 
     .project-img{
-       
+      border-radius:5px;
     }
   
     

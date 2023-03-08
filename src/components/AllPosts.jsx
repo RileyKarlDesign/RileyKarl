@@ -74,9 +74,9 @@ function pathNameStyleing () {
     homeWrap.classList.remove('work-state')
     homeWrap.classList.add('about-state')
 
-    workBtn.classList.add('btn-inactive')
+    workBtn.classList.remove('btn-inactive')
    
-    aboutBtn.classList.remove('btn-inactive')
+    aboutBtn.classList.add('btn-inactive')
     projectTab.classList.remove('open')
 
     aboutSection.classList.remove('inactive')
@@ -93,8 +93,8 @@ function pathNameStyleing () {
 
     setHomeSlideState('work')
 
-    workBtn.classList.remove('btn-inactive')
-    aboutBtn.classList.add('btn-inactive')
+    workBtn.classList.add('btn-inactive')
+    aboutBtn.classList.remove('btn-inactive')
     workSection.classList.remove('inactive')
     homeWrap.classList.add('work-state')
     homeWrap.classList.remove('about-state')
