@@ -1,26 +1,7 @@
 
-@keyframes fadeIn {
+
   
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 100%;
-    }
-  
-  }
-  
-  @keyframes pulse {
-  
-    from {
-      background-color: red;
-    }
-  
-    to {
-      background-color: var(--wht);
-    }
-    
-  }
+
 
   .project-open{
     background-color: var(--inactive);
@@ -109,16 +90,15 @@
   
     
     height: fit-content;
-    width: 30%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding-right: var(--pdn);
+    gap: 5px; 
+    padding-top: calc( var(--pdn) * 8);
+    position: sticky;
+    top: 0;
     
-    
-    gap: 5px;
-    
-    padding-top: calc( var(--pdn) * 10 );
-  
   }
 
   @media only screen and (max-width: 1000px) {
@@ -126,6 +106,7 @@
       
       
       width: calc(100% - var(--pdn)* 2 );
+      
     }
   }
   
@@ -141,18 +122,29 @@
     
     overflow-x: scroll;
     /* background-color: var(--wht); */
-    
-    
-    
-    display: flex;
+    display: grid;
     flex-direction: column;
-    align-items: flex-end;
-    
-    
     gap: var(--pdn);
     overflow-x: hidden;
     z-index: 100000000;
     
+    
+    
+  }
+
+  .project-main-contnent{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--pdn);
+    padding: 0 var(--pdn) ;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .project-main-contnent{
+      
+      grid-template-columns: 1fr 1fr;
+     
+    }
     
     
   }
@@ -163,19 +155,16 @@
     display: flex;
     justify-content: space-between;
     width: calc( 100% - var(--pdn) * 2);
-    padding: var(--pdn);
-    padding-left: calc( 100% - 30%);
-    
-    padding-right: var(--pdn);
+    padding: var(--pdn) 0;
    position: fixed;
    z-index: 800;
    
   justify-content: flex-end;
-  border-bottom: 1px solid var(--blk);
+  // border-bottom: 1px solid var(--blk);
   background-color: var(--wht);
 
    .project-header-contnet{
-    width: 30%;
+    width: 33.3%;
     display: flex;
     justify-content: space-between;
     
@@ -189,18 +178,21 @@
    
     .project-header{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex;
        position: fixed;
        left: 0;
+       right: 0;
        width: calc( 100% - var(--pdn) * 2);
        z-index: 800;
        padding-left: var(--pdn);
+      //  background-color: green;
       }
 
       .project-header-contnet{
-        width: 100% !important;
+        width: calc( 50% - var(--pdn)) !important;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        // background-color: red;
         
        }
 
@@ -244,17 +236,22 @@
   
   .project-images{
     
-    width: 100%;
     padding-top: calc( var(--pdn) * 6 );
     padding-bottom: calc( var(--pdn) * 3 );
-    
+    padding-left: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr   ;
+    grid-template-columns: 1fr ;
     // flex-direction: column;
     // align-items: flex-start;
     // justify-content: flex-start;
-    gap: var(--pdn);
+    gap: calc(var(--pdn));
     object-fit: cover;
+   
+    
+
+    .project-img{
+       
+    }
   
     
     /* background-color: firebrick; */

@@ -155,26 +155,26 @@ function pathNameStyleing () {
   }
   
   // cursor movement / Functionality
-let cursor = () => {
-    document.addEventListener( 'mousemove', (e) => {
+// let cursor = () => {
+//     document.addEventListener( 'mousemove', (e) => {
 
-      let hoverImages= document.querySelectorAll('.hover-img')
+//       let hoverImages= document.querySelectorAll('.hover-img')
 
      
-        var x = e.clientX - 150;
-        var y = e.clientY - 0;
-        hoverImages.forEach((e)=>{
-          e.style.transform= "translate(" + x+ "px," +  y  + "px)";
-        })
+//         var x = e.clientX - 150;
+//         var y = e.clientY - 0;
+//         hoverImages.forEach((e)=>{
+//           e.style.transform= "translate(" + x+ "px," +  y  + "px)";
+//         })
         
         
 
         
-    } )
+//     } )
 
-}
+// }
 
-cursor()
+// cursor()
 
 
   useEffect(() => {
@@ -182,7 +182,10 @@ cursor()
     window.addEventListener("popstate", handleEvent)
     pathNameStyleing()
 
-   
+    gsap.set('.project-card', {y: '100%', opacity:0 });
+    gsap.fromTo(".project-card", {y:'100%', opacity:0 , stagger:0.4}, {y: '0%', opacity:1,stagger:0.1, });
+  
+
     
 
     sanityClient
@@ -224,12 +227,9 @@ cursor()
       
       
 
-      <h1 className="footer-name">Riley Karl </h1>
       
-      <div className="landing-animation"  >
-        <h1>Riley Karl  </h1>
-      </div>
 
+    
    
       <Header changeHomeState = {changeHomeState} setHomeSlideState={setAllPosts} homeSlideState={homeSlideState}/>
   
@@ -238,15 +238,13 @@ cursor()
 
         
         <div className= {`work-section section active ${projectState ? "project-open" : ""}`} >
+        
             <div className="all-work">
 
             
-            {/* <div className="work-section-title">
-              <h1> Live Projects </h1>
-              <h1> 09 </h1>
-            </div> */}
+          
               
-              <div className="catagorys-title">
+              {/* <div className="catagorys-title">
 
               
                 <p className="work-line-index " > Index </p>
@@ -257,33 +255,35 @@ cursor()
                 
                 
                 
-              </div>
+              </div> */}
         
 
             {allPostsData && allPostsData.map((post, index) => (
              
 
-                <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => setProjectState(true) }>
+                <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => setProjectState(true) } className="project-card">
                     <div className="line"></div>
-                    <div className="work-line"  key={index + post.title}  >
-
-                      
 
                     <div className="hover-img">
                       <img className="project-hover-img" src={post.mainImage.asset.url} alt="" />
                     </div>
+                    <div className="work-line"  key={index + post.title}  >
+
+                      
+
+                    
                     
                         
                         
                         
                          
-                        <p className="work-line-index"> { index + 1 < 10 ? `0${index + 1}`: index }</p>
+                        <p className="work-line-index sub"> { index + 1 < 10 ? `0${index + 1}`: index }</p>
                           
                        
                         
 
                         <p className="work-line-title" >{post.title}</p>
-
+{/* 
                       { !post.categories || (
                       
                         <div className="work-catagory">
@@ -300,13 +300,11 @@ cursor()
                         
                         </div>
 
-                        )}
+                        )} */}
                         <div className="work-line-date"> 
                         
                         <p> {post.date}</p>
-                        <div className="work-line-dot">
-
-                          </div>
+                      
                         </div>
                         
                           
@@ -344,7 +342,7 @@ cursor()
 
             </div >
 
-      <Footer/>  
+      
       </div>
   );
 }

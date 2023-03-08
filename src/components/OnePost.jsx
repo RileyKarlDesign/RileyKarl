@@ -87,152 +87,154 @@ useEffect(()=>{
           
 
         
-          <div className="project-header">
+         
 
-          <div className="project-header-contnet">
+        <div className="project-main-contnent">
+        <div className="project-header">
 
-                <div className="project-title-wrapper">
-              <p className=" btn btn-inactive  "> {postData.title}</p>
-              </div>
+<div className="project-header-contnet">
 
-              <Link to="/work" onClick= { () => props.setProjectState(false) } >
-                  <CloseBtn  />
-                </Link>
+      <div className="project-title-wrapper">
+    <p className=" btn btn-inactive  "> {postData.title}</p>
+    </div>
+
+    <Link to="/work" onClick= { () => props.setProjectState(false) } >
+        <CloseBtn  />
+      </Link>
+
+</div>
+
+
+
+
+      
+
+</div>
+        
+        
+            <div className={"project-images "} >
+
+          <MySwiper images={postData.images}  />
+
+
+
 
           </div>
-        
 
-        
 
-                
-
-          </div>
-
-        
-       
-
-          <div className="project-main-info">
-          {/* <h1> {postData.title}</h1> */}
-          
-          <p className="sub">
-             Project Infomation
-          </p>
-
-          { !postData.about || (
-            <> 
-
+            <div className="project-main-info">
+            {/* <h1> {postData.title}</h1> */}
             
-            <div className="about-info-block ">
-             
+            
 
-              <p> {postData.about} </p>
-            </div>  
+            { !postData.about || (
+              <> 
 
+              
+              <div className="about-info-block ">
+              
+
+                <p> {postData.about} </p>
+              </div>  
+
+              </>
+            )}
+
+            { !postData.title || (
+            <> 
+            <div className="line"></div>
+            <div className="info-block  project-info-block">
+              <p className="half"> Titile </p>
+
+              <p> {postData.title} </p>
+            </div>
+
+            </>
+
+            )}
+
+
+          { !postData.year || (
+            <> 
+            <div className="line"></div>
+            <div className="info-block  project-info-block">
+              <p className="half"> Year </p>
+
+              <p> {postData.date} </p>
+            </div>
             </>
           )}
 
-          { !postData.title || (
-          <> 
-          <div className="line"></div>
-          <div className="info-block  project-info-block">
-            <p className="half"> Titile </p>
 
-            <p> {postData.title} </p>
-          </div>
+            { !postData.categories || (
+            <> 
+              <div className="line"></div>
+              <div className="info-block  project-info-block">
+              <p className="half"> Servises </p>
+                <div className="cats">
 
-          </>
+                    {postData.categories.map( (cat, index) => (
+                      
+                      <div key={index + cat + index }>
+                        <p>{cat}</p>
+                        
+                      </div>
+                      
+                    ))} 
 
-          )}
+              </div>
+              </div>
+            </>
+            )}
+        
 
-
-        { !postData.year || (
-          <> 
-          <div className="line"></div>
-          <div className="info-block  project-info-block">
-            <p className="half"> Year </p>
-
-            <p> {postData.date} </p>
-          </div>
-          </>
-        )}
-
-
-          { !postData.categories || (
+        { !postData.names > 0 || (
           <> 
             <div className="line"></div>
-            <div className="info-block  project-info-block">
-            <p className="half"> Servises </p>
-              <div className="cats">
+              <div className=" info-block project-info-block">
+              <p className="half"> Credits </p>
 
-                  {postData.categories.map( (cat, index) => (
-                    
-                    <div key={index + cat + index }>
-                      <p>{cat}</p>
+              
+
+                <div className="credits">
+              
+                  {postData.names.map( (name, index) => (
+
+                    <div key={index + name}>
+                      <p>{name}</p>
                       
                     </div>
                     
-                  ))} 
+                  ))}
 
-            </div>
-            </div>
-          </>
-          )}
-      
-
-      { !postData.names > 0 || (
-        <> 
-          <div className="line"></div>
-            <div className=" info-block project-info-block">
-             <p className="half"> Credits </p>
-
-             
-
-              <div className="credits">
-            
-                {postData.names.map( (name, index) => (
-
-                  <div key={index + name}>
-                    <p>{name}</p>
-                    
+                
                   </div>
-                  
-                ))}
+
+                </div>
+                </>
+        )}    
+            
+
+            
+            
+
+            
+          
 
               
-                </div>
-
-              </div>
-              </>
-      )}    
+              
+              
           
 
           
-          
-
-          
-         
-
             
-            
-            
-         
-
-         
           
-        
-              </div>
-        
-        
-          
-          <div className={"project-images "} >
-
-          <MySwiper images={postData.images}  />
-      
-
-          
-
           </div>
 
+         </div>
+        
+          
+          
             
     
     </div>

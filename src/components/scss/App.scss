@@ -19,7 +19,7 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background-color: var(--inactive);
+  background-color: green;
   z-index: 99999999999;
   display: flex;
   align-items: center;
@@ -28,8 +28,6 @@
   flex-direction: column;
   opacity: 0;
   pointer-events: none;
-  display: none;
-
  
 }
 
@@ -84,20 +82,12 @@ body{
 
 .main-footer{
   
-  position: absolute;
-  display: flex ;
-  justify-content: space-between;
+ 
+ 
   
-  left: 0 ;
-  right: 0 ;
-  bottom: 0 ;
-  padding: var(--pdn);
-  z-index: 99999999;
-  backdrop-filter: blur(10px);
-
-  border-top: 1px solid var(--blk);
-  display: none;
-  
+  img{
+    width: 49vw;
+  }
  
 }
 
@@ -167,19 +157,25 @@ body{
 }
 
 :root {
-  --pdn: 10px;
-  --grey: #fc490da0;
+  --pdn: 7px;
+  
+    @media only screen and (max-width: 1000px) {
+    --pdn: 7px;
+    }
+
+
+  --grey: #4d4d4da0;
   --lite-grey: #ebdcd6;
   /* --inactive: rgb(51, 116, 73); */
-  --inactive: #fc490d;
-  --wht: #ebebeb;
-  --lite-wht: #ff51003e;
-  --blk: #fc490d;
-  --line: #ff400036;
-  --shadow: rgb(111, 111, 111);
+  --inactive: #0d0d0d;
+  --wht: #171717;
+  --lite-wht: #4242423e;
+  --blk: rgb(246, 246, 246);
+  --line: #58585836;
+  --shadow: rgb(40, 40, 40);
   --closed-window: 50px;
   --window-width: calc(100vw - var(--closed-window));
-  --shadow: #fc490d;;
+  --shadow: #0a0a0a;;
 }
 
 
@@ -243,10 +239,10 @@ p{
 
 
 .sub{
-  color: var(--grey);
-  padding-bottom: calc( var(--pdn) * 2);
+  color: var(--blk);
+  font-weight: 100;
   
-  font-size: 0.8rem ;
+  
   
 }
 
@@ -271,10 +267,11 @@ h1{
   top: 0;
   left:0;
   right: 0;
+  height: 20px;
   background-color: var(--wht);
   // backdrop-filter: blur(10px);
   padding: var(--pdn);
-  border-bottom: 1px solid var(--blk);
+  
   display: flex;
   
   justify-content: flex-end;
@@ -285,10 +282,6 @@ h1{
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
-  
-  
-
 }
 
 
@@ -314,13 +307,27 @@ h1{
   .nav-links{
     display: flex;
     gap: var(--pdn);
-    /* width: 900px; */
-    justify-content: flex-end;
+    width: calc(50vw - var(--pdn) * 2); 
+    justify-content: space-between;
     /* flex-direction: row-reverse; */
-    
+   
     
   }
  }
+
+ @media only screen and (max-width: 700px) {
+  
+
+  .nav-links{
+    display: flex;
+    gap: calc( var(--pdn) * 3);
+    width: calc(50vw - var(--pdn) * 2); 
+    // background-color: red;
+    justify-content: flex-end;
+    /* flex-direction: row-reverse; */
+  }
+ }
+
  
 /* 
 .hide-nav-links .nav-links{

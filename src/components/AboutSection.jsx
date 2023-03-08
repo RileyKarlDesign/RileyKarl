@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 
 import imageUrlBuilder from "@sanity/image-url";
+import Footer from "./subComponents/Footer.jsx";
 
 
 const builder = imageUrlBuilder(sanityClient);
@@ -64,6 +65,7 @@ export default function AboutSection(props) {
             _id,
             url
           },
+         
 
 
 
@@ -92,19 +94,19 @@ export default function AboutSection(props) {
 
       
     <div className="all-about">
-    
+    <Footer/>
 
     <div className="about-contact">
-          {/* <div className="profile-img">
+          <div className="profile-img">
 
-          <img  src={aboutData.mainImage.asset.url} alt='rileykarl' />
-           
-          </div> */}
-          <p className="sub"> Contact </p>
-        <p> P : 027 456 374  </p>
-        <p> E : rileykarldesign@gmail.com  </p>
-        <p> I : @riley.karl </p>
-      </div>
+              <img  src={aboutData.mainImage.asset.url} alt='rileykarl' />
+              
+          </div>
+            <p className="sub"> Contact </p>
+           <p> P : 027 456 374  </p>
+           <p> E : rileykarldesign@gmail.com  </p>
+            <p> I : @riley.karl </p>
+           </div>
 
     <div className="about-info">
 
@@ -172,30 +174,11 @@ export default function AboutSection(props) {
 
        </div>
 
-      {/* <div className="footer">
-
-      
-          
-          <div className="social-block">
-
-          <p className="sub" >Social</p>
-          <a className="underline" href= {" https://www.instagram.com/"+  aboutData.instagram } target="_blank" > Instagram  </a>
-          <a className="underline" href={ " https://www.linkedin.com/in/"+ aboutData.linkedin + "/" }target="_blank" > linkedin  </a>
-
-          </div>
-
-          <div className="contact-block">
-          <p className="sub">Contact</p>
-          <a className="unerline" href={"mailto:"+ aboutData.email } target="_blank"> Email : {aboutData.email} </a>
-          <p> Phone :  {aboutData.phone} </p>
-
-          </div>
-
-          </div> */}
+   
           
       </div>
 
-    
+        
       </div>
       
     </div>

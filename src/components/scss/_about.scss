@@ -12,6 +12,8 @@
   
 }
 
+
+
 .about-state .about-section{
   
 
@@ -52,12 +54,41 @@
     justify-content: flex-end;
     overflow: scroll;
     padding: var(--pdn);
-    padding-top: calc( var(--pdn) * 7);
+    padding-top: calc( var(--pdn) * 8);
 
     gap: var(--pdn);
     
 
   }
+
+  @media only screen and (max-width: 1000px) {
+    .all-about{
+
+  
+      grid-template-columns: 1fr 1fr;
+      
+      
+  
+    }
+    
+    
+  }
+
+  @media only screen and (max-width: 700px) {
+    .all-about{
+
+  
+      grid-template-columns: 1fr ;
+      
+      
+  
+    }
+    
+    
+  }
+
+
+ 
 
   .about-section{
     
@@ -72,29 +103,11 @@
     padding: 0;
     display: flex;
     justify-content: flex-end;
-
-    
-    
     
 
-    
-
-    
-  
-    
-    
-    
-   
   }
 
-  @media only screen and (max-width: 1000px) {
-   
-    .all-about{
-        grid-template-columns: 1fr ;
-    }
 
-    
-  }
 
 .about-contact{
     
@@ -103,10 +116,11 @@
   align-self: start;
 
   img{
-    width: 12vw;
-    height: 14vw;
+    width: 60%;
+    height: auto;
     object-fit: cover;
     margin-bottom:calc( var(--pdn) * 2 );
+    
 }
 }
 
@@ -138,13 +152,26 @@
     grid-column: 3/4;
     height: fit-content;
 
+    .sub{
+      margin-bottom:calc( var(--pdn) * 4 );
+    }
+
    
 
    }
 
+  @media only screen and (max-width: 700px) {
+    .about-info {
+      width: 100%;
+      grid-column: 1/2
+      
+    }
+  }
+
   @media only screen and (max-width: 1000px) {
     .about-info {
       width: 100%;
+      grid-column: 2/3
       
     }
   }
@@ -192,11 +219,7 @@
   .footer{
     width: 100%;
    
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: var(--pdn);
-    padding-bottom: var(--pdn);
-    padding-top: var(--pdn);
+    
     
   }
 

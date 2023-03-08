@@ -57,7 +57,14 @@ export default defineType({
       title: 'Phone',
       type: 'string'
     }),
-
+    defineField({
+      name: 'footerimg',
+      title: 'Footer image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
 
     
   ],
