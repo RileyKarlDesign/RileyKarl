@@ -1,14 +1,22 @@
 .about-state{
     overflow: hidden;
 
-   
+    .all-work{
+      img{
+        opacity: 0;
+      }
+
+      .hover-img{
+        background-color: var(--inactive);
+      }
+    }
    
   }
 
 .about-state .work-section{
     width: 0vw;
     min-height: 100vh;
-    background-color: var(--blk)
+    
   
 }
 
@@ -54,7 +62,7 @@
     justify-content: flex-end;
     overflow: scroll;
     padding: var(--pdn);
-    padding-top: calc( var(--pdn) * 8);
+    padding-top: calc( var(--pdn) * 7);
 
     gap: var(--pdn);
     
@@ -111,8 +119,8 @@
 
 .about-contact{
     
-  position: sticky;
-  top: 0;
+  position: absolute;
+  top: calc(var(--pdn) * 7);
   align-self: start;
   height: 90%;
   
@@ -125,7 +133,7 @@
     
 
     .sub{
-      margin-bottom: calc(var(--pdn) * 4);
+      margin-bottom: calc(var(--pdn) * 3);
     }
   }
   
@@ -169,7 +177,7 @@
     height: fit-content;
 
     .sub{
-      margin-bottom:calc( var(--pdn) * 4 );
+      margin-bottom:calc( var(--pdn) * 3);
     }
 
    

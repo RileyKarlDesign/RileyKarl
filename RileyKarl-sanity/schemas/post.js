@@ -70,6 +70,13 @@ export default defineType({
       type: 'array',
       of: [{ type: 'image' }]
      }),
+
+     defineField({
+      name: 'link',
+      title: 'Link',
+      type: 'url',
+      
+     }),
     
     defineField({
         name: 'names',

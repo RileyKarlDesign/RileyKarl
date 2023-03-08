@@ -52,6 +52,7 @@ useEffect(()=>{
           slug,
           date,
           about,
+          link,
           layout,
           mainImage{
             asset->{
@@ -125,15 +126,26 @@ useEffect(()=>{
             <div className="project-main-info">
             {/* <h1> {postData.title}</h1> */}
             
-            
+            <p className="sub p-info"> Project Infomation </p>
 
-           
+            { !postData.about || (
+              <> 
+
+              
+              <div className="about-info-block ">
+              
+
+                <p> {postData.about} </p>
+              </div>  
+
+              </>
+            )}
 
             { !postData.title || (
             <> 
            
             <div className="info-block  project-info-block">
-              <p className="half"> Titile </p>
+              <p className="sub"> Titile </p>
 
               <p> {postData.title} </p>
             </div>
@@ -147,7 +159,7 @@ useEffect(()=>{
             <> 
             
             <div className="info-block  project-info-block">
-              <p className="half"> Year </p>
+              <p className="sub"> Year </p>
 
               <p> {postData.date} </p>
             </div>
@@ -159,7 +171,7 @@ useEffect(()=>{
             <> 
               
               <div className="info-block  project-info-block">
-              <p className="half"> Servises </p>
+              <p className="sub"> Servises </p>
                 <div className="cats">
 
                     {postData.categories.map( (cat, index) => (
@@ -181,7 +193,7 @@ useEffect(()=>{
           <> 
             
               <div className=" info-block project-info-block">
-              <p className="half"> Credits </p>
+              <p className="sub"> Credits </p>
 
               
 
@@ -201,22 +213,33 @@ useEffect(()=>{
 
                 </div>
                 </>
-        )}    
+        )}   
+
+        
+        { !postData.link || (
+          <> 
+            
+              <div className=" info-block project-info-block">
+              <p className="sub"> Live Site </p>
+
+              
+
+                <div className="link">
+              
+                  <a target={'_blank'} href={postData.link}> Click Here </a>
+                    
+                  
+
+                
+                  </div>
+
+                </div>
+                </>
+        )}   
             
 
             
-            { !postData.about || (
-              <> 
-
-              
-              <div className="about-info-block ">
-              
-
-                <p> {postData.about} </p>
-              </div>  
-
-              </>
-            )}
+            
 
             
           
