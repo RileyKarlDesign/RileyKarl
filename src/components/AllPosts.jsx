@@ -82,10 +82,10 @@ function pathNameStyleing () {
     aboutSection.classList.remove('inactive')
     
     if(aboutSection){
-      console.log('')
+      
     }
 
-    console.log(" removing open")
+   
 
   } else if (pathName === '/work'){
 
@@ -100,7 +100,7 @@ function pathNameStyleing () {
     homeWrap.classList.remove('about-state')
     projectTab.classList.remove('open')
 
-    console.log("removing open")
+    
   }
 }
 
@@ -117,7 +117,7 @@ function pathNameStyleing () {
 
     if ( e === 'about'){
 
-        console.log('click about state active ')
+        
           
           workBtn.classList.remove('btn-inactive')
           aboutBtn.classList.add('btn-inactive')
@@ -182,10 +182,10 @@ function pathNameStyleing () {
     window.addEventListener("popstate", handleEvent)
     pathNameStyleing()
 
+    if(document.querySelector('.project-card')){
     gsap.set('.project-card', {y: '100%', opacity:0 });
     gsap.fromTo(".project-card", {y:'100%', opacity:0 , stagger:0.4}, {y: '0%', opacity:1,stagger:0.1, });
-  
-
+    }
     
 
     sanityClient
