@@ -154,7 +154,7 @@
   .project-header{
     display: flex;
     justify-content: space-between;
-    width: calc( 100% - var(--pdn) * 2);
+    width: 100%;
     padding: var(--pdn) 0;
    position: fixed;
    z-index: 800;
@@ -164,7 +164,7 @@
   background-color: var(--wht);
 
    .project-header-contnet{
-    width: 33.3%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     
@@ -231,6 +231,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--pdm);
     width: 100%;
+    border-top: 1px solid var(--line);
   
   }
   

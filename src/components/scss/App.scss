@@ -81,10 +81,7 @@ body{
 }
 
 .main-footer{
-  
- 
- 
-  
+
   img{
     width: 49vw;
   }
@@ -95,7 +92,7 @@ body{
   
   .main-footer{
     position: block !important;
-    background-color: green;
+   
     bottom: 0;
   }
   }
@@ -230,7 +227,7 @@ p{
 
 @media only screen and (max-width: 1000px) {
   p,a {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
 
   }
 }
@@ -241,6 +238,7 @@ p{
 .sub{
   color: var(--blk);
   font-weight: 100;
+  opacity: 0.6;
   
   
   
@@ -345,8 +343,7 @@ h1{
 
 
 .home-wrap{
-  display: flex;
-  flex-direction: row-reverse;
+  
   
   
   overflow: hidden;
@@ -430,10 +427,8 @@ h1{
 }
 
 .inactive .section {
-  
   opacity: 0.3;
   background-color: red;
-  
 }
 
 .inactive .about-info{

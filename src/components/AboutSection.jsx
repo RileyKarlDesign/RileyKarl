@@ -94,18 +94,30 @@ export default function AboutSection(props) {
 
       
     <div className="all-about">
-    <Footer/>
+    
+        
 
     <div className="about-contact">
-          <div className="profile-img">
+
+    <div className="contact-block">
+
+          <p className="sub"> Contact </p>
+          <p>  {aboutData.phone}   </p>
+          <p>  {aboutData.email}  </p>
+          <p>  {aboutData.instagram}  </p>
+
+          </div>
+
+          {/* <div className="profile-img">
 
               <img  src={aboutData.mainImage.asset.url} alt='rileykarl' />
               
-          </div>
-            <p className="sub"> Contact </p>
-           <p> P : 027 456 374  </p>
-           <p> E : rileykarldesign@gmail.com  </p>
-            <p> I : @riley.karl </p>
+          </div> */}
+
+          
+            
+
+            
            </div>
 
     <div className="about-info">

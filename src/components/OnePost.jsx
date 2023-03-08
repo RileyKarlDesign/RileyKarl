@@ -127,22 +127,11 @@ useEffect(()=>{
             
             
 
-            { !postData.about || (
-              <> 
-
-              
-              <div className="about-info-block ">
-              
-
-                <p> {postData.about} </p>
-              </div>  
-
-              </>
-            )}
+           
 
             { !postData.title || (
             <> 
-            <div className="line"></div>
+           
             <div className="info-block  project-info-block">
               <p className="half"> Titile </p>
 
@@ -156,7 +145,7 @@ useEffect(()=>{
 
           { !postData.year || (
             <> 
-            <div className="line"></div>
+            
             <div className="info-block  project-info-block">
               <p className="half"> Year </p>
 
@@ -168,7 +157,7 @@ useEffect(()=>{
 
             { !postData.categories || (
             <> 
-              <div className="line"></div>
+              
               <div className="info-block  project-info-block">
               <p className="half"> Servises </p>
                 <div className="cats">
@@ -190,7 +179,7 @@ useEffect(()=>{
 
         { !postData.names > 0 || (
           <> 
-            <div className="line"></div>
+            
               <div className=" info-block project-info-block">
               <p className="half"> Credits </p>
 
@@ -216,7 +205,18 @@ useEffect(()=>{
             
 
             
-            
+            { !postData.about || (
+              <> 
+
+              
+              <div className="about-info-block ">
+              
+
+                <p> {postData.about} </p>
+              </div>  
+
+              </>
+            )}
 
             
           

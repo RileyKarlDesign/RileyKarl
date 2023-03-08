@@ -241,22 +241,6 @@ function pathNameStyleing () {
         
             <div className="all-work">
 
-            
-          
-              
-              {/* <div className="catagorys-title">
-
-              
-                <p className="work-line-index " > Index </p>
-                <p className="work-line-title " > Title </p>
-                <p className="work-line-cat  " > Catagories </p>
-                <p className="work-line-date  " > Year </p>
-                
-                
-                
-                
-              </div> */}
-        
 
             {allPostsData && allPostsData.map((post, index) => (
              
@@ -315,9 +299,7 @@ function pathNameStyleing () {
                       
               ))}
 
-            {/* <div className="work-section-title">
-              <h1> Upcoming  </h1>
-            </div> */}
+
 
 
             </div>    
@@ -328,9 +310,10 @@ function pathNameStyleing () {
           
           
           <AboutSection  />
-
+          
       </div>
-
+      
+     
       <div  className= {`project-tab ${projectState ? "open" : "closed"}`}  >
 
               
