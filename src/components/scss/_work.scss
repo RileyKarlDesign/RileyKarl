@@ -18,7 +18,7 @@
     filter: var(--drop);
     
     display: flex;
-  
+    overflow: scroll;
   }
 
   .work-state{
@@ -65,7 +65,7 @@
     min-width: calc(100vw - var(--pdn) * 2);
     padding: var(--pdn);
     padding-top: calc( var(--pdn) * 5);
-    overflow: scroll;
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     gap: var(--pdn);
