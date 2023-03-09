@@ -330,7 +330,7 @@ function pathNameStyleing () {
       </div>
       
      
-      <div  className= {`project-tab ${projectState ? "open" : "closed"}`}  >
+           <div  className= {`project-tab ${projectState ? "open" : "closed"}`}  >
 
               
                 <Routes>
