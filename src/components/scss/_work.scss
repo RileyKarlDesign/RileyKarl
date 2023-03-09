@@ -69,7 +69,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     gap: var(--pdn);
-    
+    height: fit-content;
     top: 0;
     margin-top: 0;
     padding-bottom: calc(var(--pdn) * 6);
