@@ -62,8 +62,8 @@
 
 .all-work{
   
-    /* min-width: calc( var(--window-width) - var(--pdn) * 5 ); */
-    min-width: calc(100vw - var(--pdn) * 4);
+   
+    min-width: calc(100vw - var(--pdn) * 2);
     padding: var(--pdn);
     padding-top: calc( var(--pdn) * 5);
     
