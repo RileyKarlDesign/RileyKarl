@@ -19,6 +19,15 @@ export default defineType({
         hotspot: true,
       },
     }),
+
+    defineField({
+      name: 'icon',
+      title: 'Icon',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
     defineField({
       name: 'clients',
       title: 'Clients',

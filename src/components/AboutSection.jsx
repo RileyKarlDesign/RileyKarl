@@ -4,6 +4,7 @@ import sanityClient from "../client.js";
 
 import imageUrlBuilder from "@sanity/image-url";
 import Footer from "./subComponents/Footer.jsx";
+import icon from "../icon/rkicon.png"
 
 
 const builder = imageUrlBuilder(sanityClient);
@@ -82,7 +83,7 @@ export default function AboutSection(props) {
       
   }, []);
 
-  if (!aboutData) return <div className=" about-section  "><div>Loading...</div></div>;
+  if (!aboutData) return <div className=" about-section  "><div>Loading</div></div>;
 
 
 
@@ -107,6 +108,8 @@ export default function AboutSection(props) {
           <p>  {aboutData.instagram}  </p>
 
           </div>
+
+          
 
           {/* <div className="profile-img">
 

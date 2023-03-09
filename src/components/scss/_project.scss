@@ -16,9 +16,9 @@
     /* animation-name: pulse;
     animation-duration: 3s;
     animation: fadeIn 3s; */
-    border-radius:5px;
+    
     position: absolute;
-     background-color: var(--wht); 
+    background-color: var(--blk); 
      
     display: flex;
     flex-direction: column;
@@ -33,7 +33,7 @@
     bottom: 0;
     left: 0;
   
-    filter: drop-shadow( 0px -0px 50px var(--inactive));
+   
     transition: ease all 1s;
     width: 100%;
     
@@ -47,7 +47,7 @@
     top:100%;
     
    
-    
+    filter: drop-shadow( 0px -10px 100px rgba(0, 0, 0, 0));
     transition: ease all 1s;
     // border-radius:600px 600px 0 0 ;
     overflow: hidden;
@@ -60,7 +60,7 @@
     transition: ease all 1s;
     
     overflow: hidden;
-    
+    filter: drop-shadow( 0px -40px 50px rgb(0, 0, 0));
     
     
     
@@ -267,7 +267,7 @@
   
   .info-block{
     display: grid;
-    padding: 5px 0 ;
+    padding: 5px 0    ;
     grid-template-columns: 1fr 1fr;
     gap: var(--pdm);
     width: 100%;

@@ -85,8 +85,8 @@
   @media only screen and (max-width: 700px) {
     .all-about{
 
-  
-      grid-template-columns: 1fr ;
+      display: inline-block;
+      
       
       
   
@@ -140,10 +140,12 @@
 
 
   img{
-    width: 60%;
+    
+    width: 20vw;
     height: auto;
     object-fit: cover;
-    margin-bottom:calc( var(--pdn) * 2 );
+   
+    
     
 }
 }
@@ -154,7 +156,9 @@
     
         position:static;
         grid-column: 1/2;
-        height: auto;
+        height: fit-content;
+        
+        margin-bottom: calc( var(--pdn) * 4);
 
     }
   }
@@ -199,13 +203,15 @@
       width: 100%;
       grid-column: 2/3
       
+      
     }
   }
 
   @media only screen and (max-width: 700px) {
     .about-info {
       width: 100%;
-      grid-column: 1/2
+      grid-column: 1/2;
+      
       
     }
   }

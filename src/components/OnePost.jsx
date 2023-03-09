@@ -5,7 +5,7 @@ import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
 import CloseBtn from "./CloseBtn.jsx";
 import MySwiper from "./subComponents/Gallery.jsx";
-
+import icon from ".././icon/rkicon.png"
 import gsap from "gsap";
 
 const builder = imageUrlBuilder(sanityClient);
@@ -77,7 +77,7 @@ useEffect(()=>{
 
 
 
-  if (!postData) return <div className="loading"><p>Loading</p></div>;
+  if (!postData) return <div className="loading"> <img src={icon} alt="" /> </div>;
 
   return (
     

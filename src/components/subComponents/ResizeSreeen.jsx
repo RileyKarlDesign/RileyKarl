@@ -1,4 +1,5 @@
 import React from 'react'
+import icon from "../../icon/rkicon.png"
 
 export default function ResizeSreeen() {
 
@@ -7,11 +8,17 @@ export default function ResizeSreeen() {
     let resizeWindow = document.querySelector('.resize-window')
 
     function resizedw(){
-        resizeWindow.classList.remove('resizeing')
+        if(resizeWindow){
+
+            resizeWindow.classList.remove('resizeing')
+
+        }
+        
     }
     
     var doit;
 
+    if(resizeWindow){
     window.addEventListener('resize' , ()=>{
         
         clearTimeout(doit);
@@ -29,12 +36,16 @@ export default function ResizeSreeen() {
 
 
     })
+}
 
   return (
     <div className='resize-window'>
         <p> Riley Isaiah Karl </p>
-        <div className="mesurments">
 
+        <img src={icon} alt="" height='300vw'/>
+        <div className="mesurments">
+            
+            
             <p className='client-width'> 0000 </p>
             <p className=''> X </p>
             <p className='client-height'> 0000 </p>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import icon from "../../icon/rkicon.png"
 
 export default function Header(props) {
   return (
@@ -7,6 +8,7 @@ export default function Header(props) {
     <> 
     <p className='logo'> Riley Isiaiah Karl </p>
     
+   
     
     <div className="nav">
         

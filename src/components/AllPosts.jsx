@@ -246,7 +246,7 @@ function pathNameStyleing () {
              
 
                 <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => setProjectState(true) } className="project-card">
-                    <div className="line"></div>
+                    
 
                     <div className="hover-img">
                       <img className="project-hover-img" src={post.mainImage.asset.url} alt="" />
@@ -261,7 +261,7 @@ function pathNameStyleing () {
                         
                         
                          
-                        <p className="work-line-index sub"> { index + 1 < 10 ? `0${index + 1}`: index }</p>
+                        {/* <p className="work-line-index sub"> { index + 1 < 10 ? `0${index + 1}`: index }</p> */}
                           
                        
                         
@@ -287,7 +287,7 @@ function pathNameStyleing () {
                         )} */}
                         <div className="work-line-date"> 
                         
-                        <p> {post.date}</p>
+                        <p className="sub"> - {post.date}</p>
                       
                         </div>
                         
