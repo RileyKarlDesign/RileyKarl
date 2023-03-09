@@ -18,7 +18,7 @@
     filter: var(--drop);
     
     display: flex;
-    overflow: scroll;
+    
   }
 
   .work-state{
@@ -62,7 +62,7 @@
 .all-work{
   
     /* min-width: calc( var(--window-width) - var(--pdn) * 5 ); */
-    min-width: calc(100vw - var(--pdn) * 2);
+    min-width: calc(100vw - var(--pdn) * 4);
     padding: var(--pdn);
     padding-top: calc( var(--pdn) * 5);
     
@@ -73,6 +73,10 @@
     top: 0;
     margin-top: 0;
     padding-bottom: calc(var(--pdn) * 6);
+
+    border: 2px solid purple;
+    overflow: scroll;
+    height: 90%;
 
     .main-footer{
       grid-column: 1/4;
