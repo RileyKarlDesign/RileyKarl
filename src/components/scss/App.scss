@@ -13,6 +13,11 @@
 
 
 .resize-window{
+  display: none;
+}
+
+@media(hover:hover){
+.resize-window{
 
   position: absolute;
   left: 0;
@@ -32,6 +37,8 @@
     mix-blend-mode: difference;
   }
  
+}
+
 }
 
 .resize-window p{
@@ -273,7 +280,7 @@ h1{
   
   left:0;
   right: 0;
-  bottom: 0;
+  top: 0;
   height: 20px;
   background-color: var(--wht);
   // backdrop-filter: blur(10px);
@@ -472,7 +479,7 @@ h1{
   overflow: hidden;
   height: 100% ;
 
-  border: 2px solid green;
+  
  
 
  
