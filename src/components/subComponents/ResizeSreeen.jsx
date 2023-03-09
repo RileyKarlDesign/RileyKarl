@@ -25,8 +25,8 @@ export default function ResizeSreeen() {
 
         resizeWindow.classList.add('resizeing')
        
-        widthText.textContent = `${window.innerHeight} px`
-        heightText.textContent = `${window.innerWidth} px`
+        widthText.textContent = `${window.innerHeight} `
+        heightText.textContent = `${window.innerWidth} `
 
         document.addEventListener('mouseup', () => {
             
