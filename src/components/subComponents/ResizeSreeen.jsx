@@ -29,7 +29,7 @@ export default function ResizeSreeen() {
         heightText.textContent = `${window.innerWidth} px`
 
         document.addEventListener('mouseup', () => {
-            console.log('alldone ')
+            
         })
 
         doit = setTimeout(resizedw, 1000);
