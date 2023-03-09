@@ -270,9 +270,10 @@ h1{
 .nav{
 
   position: fixed;
-  top: 0;
+  
   left:0;
   right: 0;
+  bottom: 0;
   height: 20px;
   background-color: var(--wht);
   // backdrop-filter: blur(10px);
@@ -469,7 +470,9 @@ h1{
   width: 100vw;
   transition: ease all 1s;
   overflow: hidden;
-  
+  height: 100% ;
+
+  border: 2px solid green;
  
 
  

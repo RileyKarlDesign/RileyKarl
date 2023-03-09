@@ -2,9 +2,7 @@
     overflow: hidden;
 
     .all-work{
-      img{
-        opacity: 0;
-      }
+      
 
       .hover-img{
         background-color: var(--inactive);
@@ -15,7 +13,9 @@
 
 .about-state .work-section{
     width: 0vw;
-    min-height: var(--vh);
+    opacity: 0.3;
+    
+    
     
   
 }
@@ -61,7 +61,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: flex-end;
     height: 100%;
-    background-color: green;
+   
     overflow: scroll;
     padding: var(--pdn);
     padding-top: calc( var(--pdn) * 7);

@@ -21,8 +21,9 @@
     
   }
 
-  .work-state{
-
+  .work-state .about-section{
+    
+    opacity: 0.4;
    
   }
   
@@ -69,14 +70,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     gap: var(--pdn);
-    height: fit-content;
+    
     top: 0;
     margin-top: 0;
     padding-bottom: calc(var(--pdn) * 6);
 
-    border: 2px solid purple;
+   
     overflow: scroll;
-    height: 90%;
+   
 
     .main-footer{
       grid-column: 1/4;
