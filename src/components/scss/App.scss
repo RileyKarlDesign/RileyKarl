@@ -62,14 +62,23 @@
 }
 
 .scroll-wrap{
-  background-color: grey;
+  
   padding: var(--pdn);
  padding-top: 0;
  
   overflow: scroll;
  
+  padding-bottom: 25vh;
   
-  padding-bottom: 20vh;
+}
+
+@media( hover:hover){
+  .scroll-wrap{
+    
+   
+    
+    padding-bottom: var(--pdn);
+  }
 }
 
 body{
@@ -380,7 +389,7 @@ h1{
 
 .home-wrap{
   
-  background-color: red;
+  
   
  
 }
@@ -462,7 +471,7 @@ h1{
 
 .inactive .section {
   opacity: 0.3;
-  background-color: red;
+  
 }
 
 .inactive .about-info{
