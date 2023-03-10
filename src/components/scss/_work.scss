@@ -68,8 +68,6 @@
   
    
     min-width: calc(100vw - var(--pdn) * 2);
-    
-    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     gap: var(--pdn);
