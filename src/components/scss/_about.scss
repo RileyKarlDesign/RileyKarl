@@ -126,6 +126,7 @@
   top: calc(var(--pdn) * 7);
   align-self: start;
   height: 90%;
+
   
   display: flex;
   justify-content: space-between;
@@ -161,7 +162,7 @@
         grid-column: 1/2;
         height: fit-content;
         
-        margin-bottom: calc( var(--pdn) * 4);
+        margin-bottom:30vh;
 
     }
   }
