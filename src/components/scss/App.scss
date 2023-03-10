@@ -67,14 +67,9 @@
  padding-top: 0;
  
   overflow: scroll;
-  height: calc(var(--vh, 1vh) * 100);
+ 
   
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999999999;
+  padding-bottom: 20vh;
 }
 
 body{
@@ -96,11 +91,13 @@ body{
 
 .logo{
   position: fixed;
-  top: calc(var(--pdn) + 1px);
+  top: 0;
   left: var(--pdn);
-
+  height: var(--header-m);
+  
   display: flex;
   justify-content: center;
+  align-items: center;
   z-index: 18;
   pointer-events: none;
 }
@@ -187,7 +184,7 @@ body{
 
 :root {
   --pdn: 7px;
-  --header-m: 34px;
+  --header-m: 25px;
   
     @media only screen and (max-width: 1000px) {
     --pdn: 7px;
@@ -304,13 +301,13 @@ h1{
   left:0;
   right: 0;
   top: 0;
-  height: 20px;
+  height: var(--header-m);
   background-color: var(--wht);
   // backdrop-filter: blur(10px);
-  padding: var(--pdn);
+  padding: 0 var(--pdn);
   
   display: flex;
-  
+  align-items: center;
   justify-content: flex-end;
   gap: var(--pdn);
   
