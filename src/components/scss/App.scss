@@ -64,9 +64,17 @@
 .scroll-wrap{
   background-color: grey;
   padding: var(--pdn);
-  padding-top: 34px;
-  padding-bottom: 60px;
+ padding-top: 0;
+ 
   overflow: scroll;
+  height: calc(var(--vh, 1vh) * 100);
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999999999;
 }
 
 body{
@@ -179,6 +187,7 @@ body{
 
 :root {
   --pdn: 7px;
+  --header-m: 34px;
   
     @media only screen and (max-width: 1000px) {
     --pdn: 7px;
