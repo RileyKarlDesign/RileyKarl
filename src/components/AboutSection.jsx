@@ -156,14 +156,18 @@ export default function AboutSection(props) {
                   </div>
                   <div className="reconition-block i-block">
                     <p className="sub" >Reconition</p>
+                      
                         {aboutData.recognition.map( (rec, index) => (
-                              
-                              <div key={index.toString()}>
-                                <p>{rec}</p>
-                              
-                              </div>
-                              
-                            ))}
+                          
+                            <> 
+
+                              <a  key={rec.name} href={rec.link} target="_blank">{rec.name}</a>
+                            </> 
+                             
+                          
+                            
+                          
+                        ))}
                   </div>
 
                   <div className="pen-block i-block ">

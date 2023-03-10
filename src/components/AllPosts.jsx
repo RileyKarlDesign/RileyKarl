@@ -34,6 +34,8 @@ export default function AllPosts() {
     // projectTab.classList.add('open');
 
     // homeWrap.classList.add('hide-nav-links');
+
+    document.body.classlist.add
     
     setProjectState(true)
   }
