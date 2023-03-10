@@ -68,8 +68,7 @@
   
    
     min-width: calc(100vw - var(--pdn) * 2);
-    padding: var(--pdn);
-    padding-top: calc( var(--pdn) * 5);
+    
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
@@ -77,10 +76,10 @@
     
     top: 0;
     margin-top: 0;
-    padding-bottom: calc(var(--pdn) * 6);
+   
 
    
-    overflow: scroll;
+    border: 1px solid green;
    
 
     .main-footer{

@@ -61,10 +61,18 @@
 
 }
 
+.scroll-wrap{
+  background-color: grey;
+  padding: var(--pdn);
+  padding-top: 34px;
+  padding-bottom: 60px;
+  overflow: scroll;
+}
+
 body{
   background-color: var(--wht);
   overflow: hidden;
-  height: 100svh;
+
  
 }
 
