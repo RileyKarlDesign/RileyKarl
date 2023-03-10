@@ -1,10 +1,10 @@
 
-.work-state .movment-wrap{
+// .work-state .movment-wrap{
   
  
-    transform: translate( 0, 0px);
+//     transform: translate( 0, 0px);
    
-  }
+//   }
   
   .work-state .about-section{
   
@@ -15,9 +15,9 @@
   .work-state .work-section{
 
     width:100vw;
-    filter: var(--drop);
-    
-    display: flex;
+   
+    border: red dotted 3px ;
+     opacity: 1;
     
   }
 
@@ -25,6 +25,10 @@
     
     opacity: 0.4;
    
+  }
+
+  .work-section{
+     display: flex;
   }
   
  
