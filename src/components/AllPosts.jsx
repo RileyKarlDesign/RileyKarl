@@ -238,72 +238,73 @@ function pathNameStyleing () {
 
         
         <div className= {`work-section section active ${projectState ? "project-open" : ""}`} >
-        
-            <div className="all-work">
+
+            <div className="scroll-wrap">
+              <div className="all-work">
 
 
-            {allPostsData && allPostsData.map((post, index) => (
-             
+              {allPostsData && allPostsData.map((post, index) => (
+              
 
-                <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => setProjectState(true) } className="project-card">
-                    
-
-                    <div className="hover-img">
-                      <img className="project-hover-img" src={post.mainImage.asset.url} alt="" />
-                    </div>
-                    <div className="work-line"  key={index + post.title}  >
-
+                  <Link to={"/work/" + post.slug.current} key={post.slug.current} onClick = { () => setProjectState(true) } className="project-card">
                       
 
-                    
-                    
+                      <div className="hover-img">
+                        <img className="project-hover-img" src={post.mainImage.asset.url} alt="" />
+                      </div>
+                      <div className="work-line"  key={index + post.title}  >
+
                         
-                        
-                        
-                         
-                        {/* <p className="work-line-index sub"> { index + 1 < 10 ? `0${index + 1}`: index }</p> */}
+
+                      
+                      
                           
-                       
+                          
+                          
+                          
+                          {/* <p className="work-line-index sub"> { index + 1 < 10 ? `0${index + 1}`: index }</p> */}
+                            
                         
+                          
 
-                        <p className="work-line-title" >{post.title}</p>
-{/* 
-                      { !post.categories || (
-                      
-                        <div className="work-catagory">
-                        {post.categories.map( (cat, index) => (
-                  
-                              <div className= 'line-cat' key={index.toString() + cat }>
-                                <p key={cat + post.title }>{cat}</p>
+                          <p className="work-line-title" >{post.title}</p>
+  {/* 
+                        { !post.categories || (
+                        
+                          <div className="work-catagory">
+                          {post.categories.map( (cat, index) => (
+                    
+                                <div className= 'line-cat' key={index.toString() + cat }>
+                                  <p key={cat + post.title }>{cat}</p>
+                                  
+                                </div>
                                 
-                              </div>
-                              
-                ))} 
+                  ))} 
 
 
-                        
-                        </div>
-
-                        )} */}
-                        <div className="work-line-date"> 
-                        
-                        <p className="sub"> - {post.date}</p>
-                      
-                        </div>
-                        
                           
+                          </div>
+
+                          )} */}
+                          <div className="work-line-date"> 
+                          
+                          <p className="sub"> - {post.date}</p>
                         
-                    </div>
+                          </div>
+                          
+                            
+                          
+                      </div>
 
-                </Link>
-                      
-              ))}
+                  </Link>
+                        
+                ))}
 
 
 
 
-            </div>    
-
+              </div>    
+            </div>
             
           </div>
 
