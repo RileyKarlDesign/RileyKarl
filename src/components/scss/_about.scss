@@ -1,44 +1,19 @@
-.about-state{
-    overflow: hidden;
 
-    .all-work{
-      
-      
-
-      .hover-img{
-        background-color: var(--inactive);
-      }
-    }
-   
-  }
 
 .about-state .work-section{
     width: 0vw;
     opacity: 0.3;
     
     
-    
-  
 }
 
 
 
 .about-state .about-section{
-  
-
-
   width:100vw;
-  filter: var(--drop);
-  display: flex;
-
 
 }
 
-
-.about-state .work-line{
- 
-  pointer-events: none;
-}
 
 
 
