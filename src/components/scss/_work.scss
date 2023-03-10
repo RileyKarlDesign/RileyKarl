@@ -71,7 +71,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     gap: 0 var(--pdn);
-    
+    margin-top: var(--header-m);
     top: 0;
    
 
@@ -295,6 +295,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .circle{
+          height: var(--header-m);
+          width: var(--header-m);
+          border-radius: 50%;
+          position: absolute;
+          right: var(--pdn);
+          z-index: 100000;
+          top: var(--pdn);
+          background-color: var(--wht);
+        }
         
         .project-hover-img{
             width: 100%;

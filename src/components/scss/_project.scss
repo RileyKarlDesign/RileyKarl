@@ -59,12 +59,12 @@
   }
   
   .open{
-    top: var(--header-m) ;
+    top: calc( var(--header-m) );
     
     transition: ease all 1s;
     
     overflow: hidden;
-    filter: drop-shadow( 0px -40px 50px rgb(38, 29, 29));
+    // filter: drop-shadow( 0px -40px 50px rgb(38, 29, 29));
     
   }
 

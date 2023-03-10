@@ -250,6 +250,7 @@ function pathNameStyleing () {
                       
 
                       <div className="hover-img">
+                       
                         <img className="project-hover-img" src={post.mainImage.asset.url} alt="" />
                       </div>
                       <div className="work-line"  key={index + post.title}  >
