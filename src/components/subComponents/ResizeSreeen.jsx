@@ -25,8 +25,8 @@ export default function ResizeSreeen() {
 
         resizeWindow.classList.add('resizeing')
        
-        widthText.textContent = `${window.innerHeight} `
-        heightText.textContent = `${window.innerWidth} `
+        // widthText.textContent = `${window.innerHeight} `
+        // heightText.textContent = `${window.innerWidth} `
 
         document.addEventListener('mouseup', () => {
             
@@ -43,14 +43,14 @@ export default function ResizeSreeen() {
         <p> Riley Isaiah Karl </p>
 
         <img src={icon} alt="" height='300vw'/>
-        <div className="mesurments">
+        {/* <div className="mesurments">
             
             
             <p className='client-width'> 0000 </p>
             <p className=''> X </p>
             <p className='client-height'> 0000 </p>
 
-        </div>
+        </div> */}
         
         
         

@@ -38,6 +38,7 @@
   pointer-events: none;
   img{
     mix-blend-mode: difference;
+    height: 230vw;
   }
  
 }
@@ -193,7 +194,7 @@ body{
 
 :root {
   --pdn: 7px;
-  --header-m: 25px;
+  --header-m: 26px;
   
     @media only screen and (max-width: 1000px) {
     --pdn: 7px;
@@ -408,7 +409,7 @@ h1{
 
 .btn{
   
-  height: 20px;
+  height: 18px;
 
   color: var(--blk);
   width: max-content;

@@ -34,12 +34,25 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}]
     }),
+ 
+
     defineField({
-      name: 'recognition',
-      title: 'Recognition',
-      type: 'array',
-      of: [{type: 'string'}]
-    }),
+      
+      title: "Recognition",
+      type: "array",
+      name: "recognition",
+      of: [
+        {
+          type: "object",
+          name: "cv",
+          fields: [
+            { type: "string", name: "name" },
+            { type: "url", name: "link" },
+            
+          ]
+        }
+      ]
+  }),
     defineField({
       name: 'pens',
       title: 'Favourite Pens',

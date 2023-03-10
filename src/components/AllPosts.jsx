@@ -35,7 +35,7 @@ export default function AllPosts() {
 
     // homeWrap.classList.add('hide-nav-links');
 
-    document.body.classlist.add
+
     
     setProjectState(true)
   }
