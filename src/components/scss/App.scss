@@ -11,7 +11,9 @@
 @import "project.scss";
 
 
-
+#root{
+  overflow: hidden;
+}
 .resize-window{
   display: none;
 }
