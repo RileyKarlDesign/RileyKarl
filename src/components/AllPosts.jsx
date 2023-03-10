@@ -95,7 +95,7 @@ function pathNameStyleing () {
     aboutBtn.classList.add('btn-inactive')
     projectTab.classList.remove('open')
 
-    aboutSection.classList.remove('inactive')
+    
     
     if(aboutSection){
       
@@ -141,11 +141,9 @@ function pathNameStyleing () {
           homeWrap.classList.remove('work-state')
           homeWrap.classList.add('about-state')
           
-          if(aboutSection){
-            aboutSection.classList.remove('inactive')
-          }
+          
          
-          workSection.classList.add('inactive')
+          
 
           
     }else if (e === "work" ) {
@@ -156,8 +154,7 @@ function pathNameStyleing () {
       document.querySelector('.home-wrap').classList.remove('about-state')
       document.querySelector('.home-wrap').classList.add('work-state')
 
-      document.querySelector('.about-section').classList.add('inactive')
-      document.querySelector('.work-section').classList.remove('inactive')
+     
     } 
 
     closeTab()

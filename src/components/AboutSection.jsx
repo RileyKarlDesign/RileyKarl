@@ -90,7 +90,7 @@ export default function AboutSection(props) {
   return (
       
 
-    <div className="about-section inactive section ">
+    <div className="about-section  section ">
 
 
       
