@@ -36,7 +36,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: flex-end;
-    height: 100%;
+   
    
     overflow: scroll;
     padding: var(--pdn);
@@ -161,7 +161,7 @@
     width: 100%;
     grid-column: 3/4;
     height: fit-content;
-    background-color: blue;
+    background-color: rgb(40, 182, 15);
    
 
     .sub{
