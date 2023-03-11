@@ -180,7 +180,7 @@ function pathNameStyleing () {
 
 
   useEffect(() => {
-
+    document.title = 'Riley Karl | Graphic Design';
     window.addEventListener("popstate", handleEvent)
     pathNameStyleing()
 
