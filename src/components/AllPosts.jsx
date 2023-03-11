@@ -6,7 +6,7 @@ import sanityClient from "../client.js";
 import AboutSection from "./AboutSection";
 import OnePost from "./OnePost.jsx";
 import gsap from "gsap";
-
+import icon from "../icon/rkicon.png"
 import Footer from "./subComponents/Footer.jsx";
 import Header from "./subComponents/Header.jsx";
 
@@ -224,14 +224,21 @@ function pathNameStyleing () {
 
   return (
     
+    <> 
 
+      <div className="loading-screen">
+        
+        <img src={icon} alt="" />
+      </div>
+    
+    
     <div className="home-wrap work-state">
     
       <ResizeSreeen />
       
       
 
-      
+    
 
     
    
@@ -333,5 +340,7 @@ function pathNameStyleing () {
 
       
       </div>
+
+      </>
   );
 }
