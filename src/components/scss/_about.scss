@@ -103,9 +103,10 @@
   align-self: start;
   height: 90%;
 
+
   
   display: flex;
-  justify-content: space-between;
+  
   flex-direction: column;
 
   .contact-block{
@@ -121,9 +122,11 @@
 
   img{
     
-    width: 20vw;
+    width: 23vw;
+    margin-top: 2em;
     height: auto;
     object-fit: cover;
+    
    
     
     
@@ -138,10 +141,24 @@
         grid-column: 1/2;
         height: fit-content;
         
-        margin-bottom:30vh;
+        
+
+        img{
+          width: 80%;
+          margin-left: 8%;
+        }
 
     }
   }
+
+  
+
+ .c-line{
+  
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin-bottom: 3px;
+ }
 
  
 

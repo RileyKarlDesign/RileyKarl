@@ -77,7 +77,7 @@ useEffect(()=>{
 
 
 
-  if (!postData) return <div className="loading"> <img src={icon} alt="" /> </div>;
+  if (!postData) return <div className="loading"> <div className="ciricle"></div> </div>;
 
   return (
     

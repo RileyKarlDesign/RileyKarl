@@ -103,19 +103,31 @@ export default function AboutSection(props) {
     <div className="contact-block">
 
           <p className="sub"> Contact </p>
+
+          <div className="c-line">
+            <p className="">P: </p>
           <p>  {aboutData.phone}   </p>
-          <p>  {aboutData.email}  </p>
-          <p>  {aboutData.instagram}  </p>
+          </div>
+          <div className="c-line">
+            <p className="">E: </p>
+          <a href="mailto:rileykarldesign@gmail.com">  {aboutData.email}   </a>
+          </div>
+          <div className="c-line">
+            <p className="">I: </p>
+          <a href="">  @{aboutData.instagram}   </a>
+          </div>
+          
+        
 
           </div>
 
           
 
-          {/* <div className="profile-img">
+          <div className="profile-img">
 
               <img  src={aboutData.mainImage.asset.url} alt='rileykarl' />
               
-          </div> */}
+          </div>
 
           
             
