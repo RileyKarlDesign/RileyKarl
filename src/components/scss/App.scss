@@ -193,7 +193,7 @@ body{
 }
 
 :root {
-  --pdn: 7px;
+  --pdn: 10px;
   --header-m: 30px;
   
     @media only screen and (max-width: 1000px) {
@@ -205,9 +205,9 @@ body{
   --lite-grey: #ebdcd6;
   /* --inactive: rgb(51, 116, 73); */
   --inactive: #000000;
-  --wht: #191919;
+  --wht: #0d0c0c;
   --lite-wht: #4242423e;
-  --blk: rgba(246, 246, 246, 0.899);
+  --blk: rgba(238, 238, 238, 0.899);
   --line: #7e7e7e36;
   --shadow: rgb(40, 40, 40);
   --closed-window: 50px;
@@ -262,7 +262,7 @@ a{
 p{
   font-size: 1rem;
   line-height: 120%;
-  font-weight: 400 ;
+  font-weight: 500 ;
   color: var(--blk);
   line-height: 1.25rem;
   

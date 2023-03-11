@@ -6,10 +6,14 @@ import AllPosts from "./components/AllPosts.jsx";
 import "./components/scss/App.scss"
 import OnePost from "./components/OnePost.jsx";
 import AboutSection from "./components/AboutSection.jsx";
-
+import ReactGA from 'react-ga';
 
 
 function App() {
+
+
+  const TRACKING_ID = "G-G3VWQ7WLFY"; // YOUR_OWN_TRACKING_ID
+  ReactGA.initialize(TRACKING_ID);
 
   let vh= 0;
 
@@ -25,6 +29,8 @@ function App() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   });
+
+  
 
   
   return (
