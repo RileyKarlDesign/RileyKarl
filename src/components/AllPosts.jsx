@@ -50,6 +50,8 @@ export default function AllPosts() {
 
     projectTab.classList.add('closed');
     projectTab.classList.remove('open');
+
+    setProjectState(false)
     
     
   }
