@@ -68,6 +68,7 @@ function handelClose(){
           date,
           about,
           link,
+          color,
           layout,
           mainImage{
             asset->{
@@ -98,7 +99,7 @@ function handelClose(){
     
 
       
-        <div className="project-inner">
+        <div className="project-inner" style={{background: postData.color }}>
 
           
 
@@ -106,11 +107,12 @@ function handelClose(){
          
 
         <div className="project-main-contnent">
-        <div className="project-header">
+        <div className="project-header" style={{background: postData.color }}>
 
 <div className="project-header-contnet">
 
       <div className="project-title-wrapper">
+        
     <p className=" btn btn-inactive  "> {postData.title}</p>
     </div>
 

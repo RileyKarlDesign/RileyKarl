@@ -10,6 +10,13 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+
+    defineField({
+      name: 'color',
+      title: 'Color',
+      type: 'string',
+    }),
+
     defineField({
       name: 'about',
       title: 'About',

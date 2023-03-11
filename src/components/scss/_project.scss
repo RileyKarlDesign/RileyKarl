@@ -129,7 +129,7 @@
   
   .project-inner{ 
     
-    
+    min-height: 100%;
    
     /* background-color: var(--wht); */
     display: grid;
@@ -178,15 +178,18 @@
     width: calc(100% - var(--pdn) * 2);
     height: var(--header-m);
     align-items: center;
-   position: fixed;
+    position: absolute ;
+    width: 33.3%;
+    right: 0;
    z-index: 800;
+   padding-right: var(--pdn);
    
   justify-content: flex-end;
   // border-bottom: 1px solid var(--blk);
   
 
    .project-header-contnet{
-    width: 33.1%;
+    width: calc(100% - var(--pdn));
     display: flex;
     justify-content: space-between;
     
