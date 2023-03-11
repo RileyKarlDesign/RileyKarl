@@ -304,6 +304,14 @@ h1{
   }
 }
 
+.dim{
+
+  p{
+    opacity: 0.3 !important;
+  }
+  
+}
+
 .nav{
 
   position: fixed;
@@ -338,6 +346,10 @@ h1{
   /* flex-direction: row-reverse; */
   width: 100%;
   justify-content: space-between;
+
+  p{
+    transition: ease all 0.3s;
+  }
   
 }
 

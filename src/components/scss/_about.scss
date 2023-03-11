@@ -40,7 +40,7 @@
    
     overflow: scroll;
     padding: var(--pdn);
-    padding-top: calc( var(--pdn) * 7);
+    padding-top: calc( var(--pdn) * 5);
 
     gap: var(--pdn);
     
@@ -99,7 +99,7 @@
 .about-contact{
     
   position: absolute;
-  top: calc(var(--pdn) * 7);
+  top: calc(var(--pdn) * 5);
   align-self: start;
   height: 90%;
 

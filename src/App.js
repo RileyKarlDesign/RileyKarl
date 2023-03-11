@@ -4,8 +4,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllPosts from "./components/AllPosts.jsx";
 import "./components/scss/App.scss"
-import OnePost from "./components/OnePost.jsx";
-import AboutSection from "./components/AboutSection.jsx";
+
 import ReactGA from 'react-ga';
 
 

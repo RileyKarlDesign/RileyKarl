@@ -22,7 +22,7 @@ export default function OnePost( props ) {
 
 
 
-const navigate = useNavigate()
+
 
 useEffect(()=>{
 
@@ -32,6 +32,21 @@ useEffect(()=>{
   
 
 })
+
+function handelClose(){
+
+
+  let tab = document.querySelector('.project-tab')
+
+  tab.classList.remove('open')
+  tab.classList.add('closed')
+
+  props.setProjectState(false)
+
+  
+
+  
+}
   
   
 
@@ -99,7 +114,7 @@ useEffect(()=>{
     <p className=" btn btn-inactive  "> {postData.title}</p>
     </div>
 
-    <Link to="/work" onClick= { () => props.setProjectState(false) } >
+    <Link to="/work" onClick= { () => handelClose() } >
         <CloseBtn  />
       </Link>
 

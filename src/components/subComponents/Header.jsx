@@ -6,13 +6,13 @@ export default function Header(props) {
   return (
 
     <> 
-    <p className='logo'> Riley Isiaiah Karl </p>
+    
     
    
     
-    <div className="nav">
-        
-
+    <div className= {`nav ${props.projectState ? "dim" : ""}`}>
+    
+    <p className='logo'> Riley Isiaiah Karl </p>
         <div className='nav-links' >
       
         <Link to={'/about'} onClick={() => props.changeHomeState('about')}> 

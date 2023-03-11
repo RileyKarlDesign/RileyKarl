@@ -233,7 +233,7 @@ function pathNameStyleing () {
 
     
    
-      <Header changeHomeState = {changeHomeState} setHomeSlideState={setAllPosts} homeSlideState={homeSlideState}/>
+      <Header projectState = {projectState} changeHomeState = {changeHomeState} setHomeSlideState={setAllPosts} homeSlideState={homeSlideState}/>
   
     
       <div className="movment-wrap">

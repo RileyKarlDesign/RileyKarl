@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+
 import sanityClient from "../client.js";
 
 import imageUrlBuilder from "@sanity/image-url";
-import Footer from "./subComponents/Footer.jsx";
-import icon from "../icon/rkicon.png"
+
 
 
 const builder = imageUrlBuilder(sanityClient);
@@ -191,7 +190,7 @@ export default function AboutSection(props) {
 
                         {aboutData.pens.map( (pen, index) => (
                                     
-                                    <div key={index.toString()}>
+                                    <div key={pen}>
                                       <p>{pen}</p>
                                     
                                     </div>
