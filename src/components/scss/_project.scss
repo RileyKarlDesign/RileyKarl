@@ -16,6 +16,7 @@
     
     position: absolute;
     background-color: var(--blk); 
+    
 
     display: flex;
     flex-direction: column;
@@ -70,7 +71,7 @@
     transition: ease all 1s;
     
     overflow: hidden;
-    filter: drop-shadow( 0px -40px 2px rgba(0, 0, 0, 0.347));
+    // filter: drop-shadow( 0px -40px 2px rgba(0, 0, 0, 0.347));
     
   }
 
@@ -95,10 +96,7 @@
   
   
   .project-main-info{
-  
     
-    
-    width: 100%;
     display: flex;
     flex-direction: column;
     padding-right: var(--pdn);
@@ -113,11 +111,22 @@
     }
   }
 
+  @media only screen and (max-width: 1000px) {
+    .project-main-info {
+    
+
+    padding-left: var(--pdn);
+
+    }
+  }
+
   @media only screen and (max-width: 700px) {
     .project-main-info {
     
     grid-row: 1;
     position: unset;
+
+    padding-left: var(--pdn);
 
     }
   }
@@ -148,7 +157,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: var(--pdn);
-    padding: 0 var(--pdn) ;
+   
   }
 
   @media only screen and (max-width: 1000px) {
@@ -181,7 +190,7 @@
     height: var(--header-m);
     align-items: center;
     position: absolute ;
-    width: 33.3%;
+    width: 33.1%;
     right: 0;
    z-index: 800;
    padding-right: var(--pdn);
@@ -210,13 +219,15 @@
        left: 0;
        right: 0;
        width: calc( 100% - var(--pdn) * 2);
+       padding-left: var(--pdn);
+      
        z-index: 800;
        padding-left: var(--pdn);
       //  background-color: green;
       }
 
       .project-header-contnet{
-        width: calc( 50% - var(--pdn) / 2) !important;
+        width: calc( 50% - var(--pdn)* 1.5) !important;
         display: flex;
         justify-content: flex-end;
         // background-color: red;
@@ -275,7 +286,10 @@
     
   }
   
-  
+  .about-info-block{
+    margin-bottom: calc(var(--pdn) * 4);
+  }
+
   
   
   .info-block{
@@ -290,11 +304,14 @@
   
   .project-images{
     
-    padding-top: calc( var(--pdn) * 1 );
-    padding-bottom: calc( var(--pdn) * 3 );
-    padding-left: 0;
+    // padding-top: calc( var(--pdn) * 1 );
+    padding-top:  calc( 7vw );
+    padding-bottom:  calc( 7vw );
+    padding-left: 12.5%;
+    padding-right: 12.5%;
     display: grid;
     grid-template-columns: 1fr ;
+    border-right: 1px solid var(--line);
     // flex-direction: column;
     // align-items: flex-start;
     // justify-content: flex-start;
@@ -315,9 +332,12 @@
     
     .project-images{
 
-        width: 100%;
-        padding-right: 0;
-        padding-left: 0;
+      padding-top: calc( var(--pdn) * 1 );
+      border-right: 1px solid var(--line);
+        width: calc(100% - var(--pdn));
+       
+        padding-left: var(--pdn);
+        padding-right: var(--pdn);
         display: block;
 
         .project-img{

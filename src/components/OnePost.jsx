@@ -113,7 +113,7 @@ function handelClose(){
 
       <div className="project-title-wrapper">
         
-    <p className=" btn btn-inactive  "> {postData.title}</p>
+    <p className="   "> {postData.title}</p>
     </div>
 
     <Link to="/work" onClick= { () => handelClose() } >
@@ -149,7 +149,7 @@ function handelClose(){
               <> 
 
               
-              <div className="about-info-block ">
+              <div className="about-info-block about-block">
               
 
                 <p> {postData.about} </p>
