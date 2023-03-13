@@ -186,6 +186,13 @@ function pathNameStyleing () {
     window.addEventListener("popstate", handleEvent)
     pathNameStyleing()
 
+
+
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    alert( ` hello ${vh * 100} `)
+
     if(document.querySelector('.project-card')){
     gsap.set('.project-card', {y: '100%', opacity:0 });
     gsap.fromTo(".project-card", {y:'100%', opacity:0 , stagger:0.4}, {y: '0%', opacity:1,stagger:0.1, });
