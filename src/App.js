@@ -1,6 +1,6 @@
 // src/App.js
 
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllPosts from "./components/AllPosts.jsx";
 import "./components/scss/App.scss"
@@ -28,6 +28,18 @@ function App() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   });
+
+  useEffect(() => {
+   
+
+   
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+   
+
+   
+      
+  }, []);
 
   
 
