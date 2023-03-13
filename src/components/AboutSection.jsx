@@ -113,7 +113,7 @@ export default function AboutSection(props) {
           </div>
           <div className="c-line">
             <p className="">I: </p>
-          <a href="https://www.instagram.com/riley.karl/" key={aboutData.instagram}>  @{aboutData.instagram}   </a>
+          <a href="https://www.instagram.com/riley.karl/"  target="_blank" key={aboutData.instagram}>  @{aboutData.instagram}   </a>
           </div>
           
         
