@@ -227,7 +227,7 @@ body{
   --window-width: calc(100vw - var(--closed-window));
   --shadow: #0d00ff;
 
-  --vh: 100vh;
+  --vh: 1px ;
 
   
 }
@@ -439,7 +439,7 @@ h1{
   
  
   background-color: var(--inactive);
-  height: 0vh;
+  height: 0px;
   animation: load 4s ;
   animation-iteration-count: 1;
   overflow: hidden;
