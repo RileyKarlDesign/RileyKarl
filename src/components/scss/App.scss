@@ -418,12 +418,12 @@ h1{
 @keyframes load {
 
   0%{
-    height: cal( var(--vh) * 100 - var(--header-m));
+    height: cal( var(--vh) * 100 - 34px );
 
   }
 
   80%{
-    height: cal( var(--vh) * 100 - var(--header-m));
+    height: cal( var(--vh) * 100 - 34px);
   }
    100%{
     height: 0vh;
