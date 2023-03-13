@@ -418,26 +418,26 @@ h1{
 @keyframes load {
 
   0%{
-    height: calc( var(--vh) * 100   );
+    height: calc( var(--vh) * 100 - var(--header-m)  );
     
   }
 
   80%{
-    height: calc( var(--vh) * 100   );
+    height: calc( var(--vh) * 100 - var(--header-m)  );
   }
   
   100%{
-    height: calc( var(--vh) * 20    );
+    height: calc( var(--vh) * 0  - var(--header-m)  );
     
   }
   
 }
 
 .loading-screen{
-  height: 0vh;
+  
  
   background-color: var(--inactive);
- 
+  height: calc( var(--vh) * 0 );
   animation: load 4s ;
   animation-iteration-count: 1;
   overflow: hidden;
