@@ -437,7 +437,7 @@ h1{
   
  
   background-color: var(--inactive);
-  height: calc( var(--vh) * 0 );
+  height: 0vh;
   animation: load 4s ;
   animation-iteration-count: 1;
   overflow: hidden;
