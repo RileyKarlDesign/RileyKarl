@@ -26,10 +26,10 @@ export default function OnePost( props ) {
 
 useEffect(()=>{
 
-
+  if(document.querySelector('.project-img',)){
     gsap.set('.project-img', {y: '100%', opacity:0 });
     gsap.fromTo(".project-img", {y:'100%', opacity:0 , stagger:0.4}, {y: '0%', opacity:1,stagger:0.1, });
-  
+  }
 
 })
 

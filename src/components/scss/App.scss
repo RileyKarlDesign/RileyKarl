@@ -28,6 +28,7 @@
   bottom: 0;
   top: 0;
   background-color: yellow;
+  overflow: hidden;
   z-index: 99999999999;
   display: flex;
   align-items: center;
@@ -322,6 +323,7 @@ h1{
 .nav{
 
   position: absolute;
+  transition: ease all 1s;
   
   left:0;
   right: 0;
@@ -411,7 +413,7 @@ h1{
 
   }
 
-  60%{
+  80%{
     height: calc(100vh - var(--header-m));
   }
 
@@ -427,12 +429,31 @@ h1{
   height: 0vh;
   background-color: rgb(255, 255, 255);
    height: 0;
-  animation: load 3.2s ;
+  animation: load 4s ;
   animation-iteration-count: 1;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
+  background-color: yellow;
+  p{
+
+    color: var(--wht);
+
+  }
+
+.hero{
+  color: white;
+  mix-blend-mode: difference;
+  font-weight: 600;
+  font-size:10vw;
+  letter-spacing: -0.4vw;
+  height: 100%;
+  justify-content: center;
+ 
+  
+}
   
 
   img{

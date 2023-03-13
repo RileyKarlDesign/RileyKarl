@@ -205,7 +205,7 @@ function pathNameStyleing () {
           _id,
           url
         },
-        magesGallery,
+        imagesGallery,
         
         
 
@@ -228,7 +228,8 @@ function pathNameStyleing () {
 
       <div className="loading-screen">
         
-        <img src={icon} alt="" />
+        <h1 className="hero"> Riley Isaiah Karl</h1>
+        
       </div>
     
     
@@ -264,7 +265,7 @@ function pathNameStyleing () {
                        
                         <img className="project-hover-img" src={post.mainImage.asset.url} alt="" />
                       </div>
-                      <div className="work-line"  key={index + post.title}  >
+                      <div className="work-line"  key={index + post.title.replace(/\s/g, "")}  >
 
                         
 

@@ -105,15 +105,15 @@ export default function AboutSection(props) {
 
           <div className="c-line">
             <p className="">P: </p>
-          <p>  {aboutData.phone}   </p>
+          <p  >  {aboutData.phone}   </p>
           </div>
           <div className="c-line">
             <p className="">E: </p>
-          <a href="mailto:rileykarldesign@gmail.com">  {aboutData.email}   </a>
+          <a  href="mailto:rileykarldesign@gmail.com">  {aboutData.email}   </a>
           </div>
           <div className="c-line">
             <p className="">I: </p>
-          <a href="">  @{aboutData.instagram}   </a>
+          <a href="https://www.instagram.com/riley.karl/" key={aboutData.instagram}>  @{aboutData.instagram}   </a>
           </div>
           
         
@@ -142,7 +142,7 @@ export default function AboutSection(props) {
         
         
         <p className="sub hero-title"> Introduction </p>
-        <p className="hero-statement"> {aboutData.hero} </p>
+        <p className="hero-statement" key='herostatement' > {aboutData.hero} </p>
 
         </div>
     
@@ -156,7 +156,7 @@ export default function AboutSection(props) {
 
                     {aboutData.clients.map( (client, index) => (
                           
-                          <div key={index.toString()}>
+                          <div key={client.replace(/\s/g, "") + index.toString()}>
 
                               <p>{client}</p>
                           
@@ -172,7 +172,7 @@ export default function AboutSection(props) {
                           
                             <> 
 
-                              <a  key={rec.name} href={rec.link} target="_blank">{rec.name}</a>
+                              <a  key={rec.name.replace(/\s/g, "") + index.toString()} href={rec.link} target="_blank">{rec.name}</a>
                             </> 
                              
                           
@@ -190,8 +190,9 @@ export default function AboutSection(props) {
 
                         {aboutData.pens.map( (pen, index) => (
                                     
-                                    <div key={pen}>
-                                      <p>{pen}</p>
+                                    <div key={pen.replace(/\s/g, "") + index.toString()}>
+
+                                      <p className={pen.replace(/\s/g, "") + index.toString()} >{pen}</p>
                                     
                                     </div>
                                     

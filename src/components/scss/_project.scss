@@ -348,6 +348,32 @@
         }
     } 
   }
+
+
+  @media only screen and (max-width: 700px) {
+    
+    .project-images{
+
+      padding-top: calc( var(--pdn) * 1 );
+      border-right: 1px solid var(--line);
+        width: calc(100% - var(--pdn));
+       
+        padding-left: var(--pdn);
+        padding-right: var(--pdn);
+        display: block;
+      
+
+        .project-img{
+           
+           padding-bottom: 0;
+           width: calc(100% - var(--pdn));
+
+        }
+    } 
+  }
+
+
+
   
   .projectgrid{
     display: grid !important;
