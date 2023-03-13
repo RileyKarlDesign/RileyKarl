@@ -467,6 +467,7 @@ h1{
 .home-wrap{
 
   position: relative;
+  height: calc(var(--vh, 1vh) * 100);
  
   
   
@@ -479,7 +480,7 @@ h1{
  
   
 
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100%;
  
 }
 
