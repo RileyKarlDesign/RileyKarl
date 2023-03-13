@@ -27,19 +27,28 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background-color: yellow;
+  background-color: var(--inactive);
   overflow: hidden;
   z-index: 99999999999;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: var(--pdn);
+  padding-top: 0;
+ 
   transition: ease all 0.2s;
   flex-direction: column;
   opacity: 0;
   pointer-events: none;
   img{
     mix-blend-mode: difference;
-    height: 230vw;
+    height:300vh;
+    display: none;
+  }
+
+  .resize-name{
+    height: var(--header-m);
+    display: flex;
+    align-items: center;
+    
   }
  
 }
@@ -208,7 +217,7 @@ body{
   --grey: #4d4d4da0;
   --lite-grey: #ebdcd6;
   /* --inactive: rgb(51, 116, 73); */
-  --inactive: #000000;
+  --inactive: #ff2f00;
   --wht: #1a1a1a;
   --lite-wht: #4242423e;
   --blk: rgba(238, 238, 238, 0.899);
@@ -427,16 +436,44 @@ h1{
 .loading-screen{
 
   height: 0vh;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--inactive);
    height: 0;
   animation: load 4s ;
   animation-iteration-count: 1;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: yellow;
+  position: relative;
+  
+  .scribble-img{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+    img{
+      
+      height: 160vh;
+      
+    }
+  }
+
+  .load-inner{
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(blk);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    align-items: center;
+  }
+
+  
   p{
 
     color: var(--wht);
@@ -447,21 +484,17 @@ h1{
   color: white;
   mix-blend-mode: difference;
   font-weight: 600;
-  font-size:10vw;
-  letter-spacing: -0.4vw;
-  height: 100%;
-  justify-content: center;
+  font-size:2em;
+  letter-spacing: -0.1em;
+  
+  
+  
  
   
 }
   
 
-  img{
-    height: 160vh;
-    object-fit: contain;
-    object-position: center;
-    mix-blend-mode: difference;
-  }
+  
 }
 
 .home-wrap{

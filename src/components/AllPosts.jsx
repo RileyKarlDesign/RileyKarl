@@ -6,7 +6,7 @@ import sanityClient from "../client.js";
 import AboutSection from "./AboutSection";
 import OnePost from "./OnePost.jsx";
 import gsap from "gsap";
-import icon from "../icon/rkicon.png"
+import icon from "../icon/STAR.png"
 import Footer from "./subComponents/Footer.jsx";
 import Header from "./subComponents/Header.jsx";
 
@@ -227,9 +227,16 @@ function pathNameStyleing () {
     <> 
 
       <div className="loading-screen">
-        
-        <h1 className="hero"> Riley Isaiah Karl</h1>
-        
+
+        <div className="load-inner">
+
+         
+
+          <p > Riley Isaiah Karl</p>
+          <p> London, United Kingdom </p>
+
+        </div>
+
       </div>
     
     
