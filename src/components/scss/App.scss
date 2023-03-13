@@ -418,14 +418,13 @@ h1{
 @keyframes load {
 
   0%{
-    height: calc(100vh - var(--header-m));
+    height: cal( var(--vh) * 100 - var(--header-m));
 
   }
 
   80%{
-    height: calc(100vh - var(--header-m));
+    height: cal( var(--vh) * 100 - var(--header-m));
   }
-
    100%{
     height: 0vh;
     
@@ -446,7 +445,7 @@ h1{
   .scribble-img{
     position: absolute;
     top: 0;
-    height: 100vh;
+    
     left: 0;
     right: 0;
     display: flex;
