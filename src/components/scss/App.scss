@@ -427,7 +427,7 @@ h1{
   }
   
   100%{
-    height: 0vh;
+    height: calc( var(--vh) * 0 - var(--header-m) );
     
   }
   
